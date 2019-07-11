@@ -92,7 +92,7 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
 
             return false;
         }
-        /// <summary>
+        /// <summary> 
         /// Metodo para alterar a informação de alocação do livro.
         /// </summary>
         /// <param name="nomeLivro">Nome do livro</param>
