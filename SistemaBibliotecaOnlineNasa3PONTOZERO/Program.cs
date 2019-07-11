@@ -15,9 +15,9 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
 
             var opcaoMenu = MenuPrincipal();
 
-            while (opcaoMenu != 3)
+            while(opcaoMenu != 3)
             {
-                if (opcaoMenu == 1)
+                if(opcaoMenu == 1)
                     AlocarUmLivro();
 
                 if(opcaoMenu == 2)
@@ -172,8 +172,8 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
 
             Console.WriteLine($"Menu - {operacao}");
             Console.WriteLine("Digite o nome do livro para realizar a operação:");
-        }   
+        }
 
-
+ 
     }
 }
