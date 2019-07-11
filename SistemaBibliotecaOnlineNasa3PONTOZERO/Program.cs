@@ -15,41 +15,19 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
 
             MostrarSejaBemVindo();
 
-            if(MenuInicial() == 1)
+            var opcaoMenu = MenuPrincipal();
+
+            while(opcaoMenu != 3)
             {
-                Console.Clear();
+                if(opcaoMenu == 1)
+                    MostrarMenuAlocacao();
 
-                MostrarSejaBemVindo();
-
-                Console.WriteLine("Menu - Alocação de livros");
-                Console.WriteLine("Digite o nome do livro a ser alocado:");
-
-                var nomedolivro = Console.ReadLine();
-                if(PesquisaLivroParaAlocacao(nomedolivro))
-                {
-                    Console.Clear();
-                    Console.WriteLine("Você deseja alocar o livro? para sim(1) para não(0)");
-                   
-                    if (Console.ReadKey().KeyChar.ToString() == "1")
-                    {
-                        AlocarLivro(nomedolivro);
-                        Console.Clear();
-                        Console.WriteLine("Livro Alocado com sucesso!");
-                    }
-                    else
-                        Console.Clear();
-                    
-                    Console.WriteLine("Listagem de livros:");
-
-                    for (int i = 0; i < baseDeLivros.GetLength(0); i++)
-                    {
-                        Console.WriteLine($"Nome: {baseDeLivros[i,0]} Disponivel:{baseDeLivros[i,1]}");
-                    }
-                }
+                opcaoMenu = MenuPrincipal();
             }
 
             Console.ReadKey();
         }
+
         /// <summary>
         /// Mostra as informações iniciais do sistema.
         /// </summary>
@@ -65,12 +43,13 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
         /// Metodo que mostra o menu inicial com as opções para escolha.
         /// </summary>
         /// <returns>Retorna o número do menu escolhido.</returns>
-        public static int MenuInicial()
+        public static int MenuPrincipal()
         {
-            Console.WriteLine("\r\nMenu - Inicial");
+            Console.WriteLine("Menu - Inicial");
             Console.WriteLine("O que você deseja realizar?");
             Console.WriteLine("1 - Alocar um livro.");
-            Console.WriteLine("2 - Sair do sistema.");
+            Console.WriteLine("2 - Devolver um livro.");
+            Console.WriteLine("3 - Sair do sistema.");
             Console.WriteLine("Digite o número desejado:");
 
             int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
@@ -120,5 +99,42 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
                     baseDeLivros[i, 1] = "não";
             }
         }
+        /// <summary>
+        /// Metodo que carrega o conteudo inicial da aplicação do menu 1
+        /// </summary>
+        public static void MostrarMenuAlocacao()
+        {
+            Console.Clear();
+
+            MostrarSejaBemVindo();
+
+            Console.WriteLine("Menu - Alocação de livros");
+            Console.WriteLine("Digite o nome do livro a ser alocado:");
+
+            var nomedolivro = Console.ReadLine();
+            if (PesquisaLivroParaAlocacao(nomedolivro))
+            {
+                Console.Clear();
+                Console.WriteLine("Você deseja alocar o livro? para sim(1) para não(0)");
+
+                if (Console.ReadKey().KeyChar.ToString() == "1")
+                {
+                    AlocarLivro(nomedolivro);
+                    Console.Clear();
+                    Console.WriteLine("Livro Alocado com sucesso!");
+                }
+                else
+                    Console.Clear();
+
+                Console.WriteLine("Listagem de livros:");
+
+                for (int i = 0; i < baseDeLivros.GetLength(0); i++)
+                {
+                    Console.WriteLine($"Nome: {baseDeLivros[i, 0]} Disponivel:{baseDeLivros[i, 1]}");
+                }
+
+                Console.ReadKey();
+            }
+        } 
     }
 }
