@@ -82,7 +82,7 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
             for (int i = 0; i < baseDeLivros.GetLength(0); i++)
             {
                 if (CompararNomes(nomeLivro, baseDeLivros[i, 0]))
-                {
+                {   
                     Console.WriteLine($"O livro:{nomeLivro}" +
                           $" pode ser alocado?:{baseDeLivros[i, 1]}");
 
