@@ -77,7 +77,7 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
         /// </summary>
         /// <param name="nomeLivro">Nome do livro a ser pesquisado</param>
         /// <returns>Retorna verdadeiro em caso o livro estiver livre para alocação.</returns>
-        public static bool? PesquisaLivroParaAlocacao(string nomeLivro)
+        public static bool? PesquisaLivroParaAlocacao(ref string nomeLivro)
         {
             for (int i = 0; i < baseDeLivros.GetLength(0); i++)
             {
@@ -100,7 +100,7 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
                 Console.WriteLine("Digite o nome do livro a ser pesquisado:");
                 nomeLivro = Console.ReadLine();
 
-                return PesquisaLivroParaAlocacao(nomeLivro);
+                return PesquisaLivroParaAlocacao(ref nomeLivro);
             }
 
             return null;
@@ -132,7 +132,7 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
             MostrarMenuInicialLivros("Alocar um livro:");
 
             var nomedolivro = Console.ReadLine();
-            var resultadoPesquisa = PesquisaLivroParaAlocacao(nomedolivro);
+            var resultadoPesquisa = PesquisaLivroParaAlocacao(ref nomedolivro);
 
             if (resultadoPesquisa != null && resultadoPesquisa == true)
             {
@@ -171,7 +171,7 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
             MostrarListaDeLivros();
 
             var nomedolivro = Console.ReadLine();
-            var resultadoPesquisa = PesquisaLivroParaAlocacao(nomedolivro);
+            var resultadoPesquisa = PesquisaLivroParaAlocacao(ref nomedolivro);
 
             if (resultadoPesquisa != null && resultadoPesquisa == false)
             {
@@ -206,10 +206,10 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
         /// <param name="primeiro">Primeira string a ser comparada.</param>
         /// <param name="segundo">Segunda string a ser comparada.</param>
         /// <returns>Retorna o resultado desta comparação.</returns>
-        public static bool CompararNomes(string primeiro,string segundo)
+        public static bool CompararNomes(string informacaoParaComparar,string informacaoASerComparada)
         {
-            if (primeiro.ToLower().Replace(" ", "")
-                    == segundo.ToLower().Replace(" ", ""))
+            if (informacaoParaComparar.ToLower().Replace(" ", "")
+                    == informacaoASerComparada.ToLower().Replace(" ", ""))
                 return true;
 
             return false;
