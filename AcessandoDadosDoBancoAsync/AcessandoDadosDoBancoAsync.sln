@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcessandoDadosDoBancoAsync", "AcessandoDadosDoBancoAsync\AcessandoDadosDoBancoAsync.csproj", "{6DB452F8-778D-4A6C-AC35-438681EBBF64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6DB452F8-778D-4A6C-AC35-438681EBBF64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DB452F8-778D-4A6C-AC35-438681EBBF64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DB452F8-778D-4A6C-AC35-438681EBBF64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DB452F8-778D-4A6C-AC35-438681EBBF64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B757CA5-C7D1-419D-AC13-3ED85742D6B8}
+	EndGlobalSection
+EndGlobal
