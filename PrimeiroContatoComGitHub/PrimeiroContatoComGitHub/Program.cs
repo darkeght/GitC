@@ -12,6 +12,7 @@ namespace PrimeiroContatoComGitHub
         {
             ///Imprime no console
             Console.WriteLine("Hello Git");
+            ///Teste
         }
     }
 }
