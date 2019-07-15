@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidandoWebSiteAsync", "ValidandoWebSiteAsync\ValidandoWebSiteAsync.csproj", "{79125173-B5B1-46E0-8C78-9E6C7BBE9491}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79125173-B5B1-46E0-8C78-9E6C7BBE9491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79125173-B5B1-46E0-8C78-9E6C7BBE9491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79125173-B5B1-46E0-8C78-9E6C7BBE9491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79125173-B5B1-46E0-8C78-9E6C7BBE9491}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46C2E0CA-9668-42FC-AAA3-6A3539E974A0}
+	EndGlobalSection
+EndGlobal

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D4347876-1EC4-4567-A42B-0ED8E5941B20}</ProjectGuid>
+    <ProjectGuid>{78E7A7BF-911A-406C-9393-2C56B87046FE}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SistemaBibliotecaOnlineNasa3PONTOZERO</RootNamespace>
-    <AssemblyName>SistemaBibliotecaOnlineNasa3PONTOZERO</AssemblyName>
+    <RootNamespace>IniciandoThreads</RootNamespace>
+    <AssemblyName>IniciandoThreads</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,7 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
