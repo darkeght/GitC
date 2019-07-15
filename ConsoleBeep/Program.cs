@@ -12,25 +12,36 @@ namespace ConsoleBeep
 
         static void Main()
         {
+            //Aqui nesta parte ele pega a hora e minutos 
             var dateVerify = DateTime.Now.ToString("HH:mm");
 
             Console.WriteLine("informe sua fileira");
-            var fileira = Console.ReadLine();
+            //Pede a informação da fileira que ele irá executar
+            var fileira = Console.ReadLine();//Pega o numero digitado
 
             Console.WriteLine("Informe a hora de inicio no formato HH:mm");
+            //Estamos assinando nossa variavel de comparação
             var timeStart = Console.ReadLine();
 
+            //Laço de repeti~ção que fica rodadndo enquando não for a hora marcada
             while (dateVerify != timeStart)
             {
-                Thread.Sleep(100);
+                //Atualizamos o valor da variavel "dateVerify" com o hora e minutos atuais
                 dateVerify = DateTime.Now.ToString("HH:mm");
             }
 
-            var startTimerIcrement = 100;
+            //seta o tempo de incremento entre as execuções
+            var startTimerIcrement = 200;
 
+            //Pega um valor de um objeto qualquer e cria uma lista para o mesmo e executa de acordo com a chamada
             switch (fileira)
             {
-                case "1":  { Fileira1(startTimerIcrement); } break;
+                //Case identifica que ele precisa fazer uma escolha
+                //logo em seguinda ele pede o numero escolhido
+                case "1":  {
+                        //Executa a chamada de acordo com o numero escolhido
+                        Fileira1(startTimerIcrement);
+                    } break;//O break finaliza a operação 
                 case "2":  { Fileira2(startTimerIcrement); } break;
                 case "3":  { Fileira3(startTimerIcrement); } break;
                 case "4":  { Fileira4(startTimerIcrement); } break;
@@ -40,9 +51,11 @@ namespace ConsoleBeep
                 case "8":  { Fileira8(startTimerIcrement); } break;
                 case "9":  { Fileira9(startTimerIcrement); } break;
                 case "10": { Fileira10(startTimerIcrement); } break;
+                    //Em caso de não ser informado uma string valida para nosso menu de opções, ele executa esse cara
+                default: { Console.WriteLine("Não foi uma escolha valida dentro do menu de opções."); } break;
             }
 
-            Console.WriteLine();
+            Console.ReadKey();
             
         }
 
