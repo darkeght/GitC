@@ -211,7 +211,7 @@ namespace InsertAndRemoveInList
                     baseDeDados[i, 3] = listaCopia[i, 3];
                     //Data da alteração deste registro
                     baseDeDados[i, 4] = listaCopia[i, 4];
-                }
+                }     //teste
                 //indicamos que neste ponto a lista foi atualizada em seu tamanho.
                 Console.WriteLine("O tamanho da lista foi atualizado.");
             }
