@@ -78,6 +78,7 @@ namespace InsertAndRemoveInList
             Console.WriteLine("Informe a idade");
             //Aqui pegamos a idade da pessoa digitada pelo usuario do sistema
             var idade = Console.ReadLine();
+            
             //Aumenta o tamanho da nossa lista quando chegou no limite.
             AumentaTamanhoLista(ref baseDeDados);
 
@@ -147,9 +148,13 @@ namespace InsertAndRemoveInList
             //Laço de repetição que mostra as informações dentro da tela de exclusão para facilitar a 
             //escolha do id corretamente
             for (int i = 0; i < baseDeDados.GetLength(0); i++)
-                Console.WriteLine($"ID:{baseDeDados[i,0]} " +
-                    $"- Nome:{baseDeDados[i,1]} " +
-                    $"- Idade:{baseDeDados[i, 2]}");
+            {
+                //Identifica que so deve remover os valores ativos dentro do sistema
+                if(baseDeDados[i, 3] != "false")
+                Console.WriteLine($"ID:{baseDeDados[i, 0]} " +
+                      $"- Nome:{baseDeDados[i, 1]} " +
+                      $"- Idade:{baseDeDados[i, 2]}");
+            }
             //Indicamos para usuario informar um id dentro do nosso sistema para remover
             Console.WriteLine("Informe o id do registro a ser removido:");
             var id = Console.ReadLine();
