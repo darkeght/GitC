@@ -12,10 +12,18 @@ namespace DesingView.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Autore
+    public partial class Locacao
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Descricao { get; set; }
+        public int Tipo { get; set; }
+        public System.DateTime Devolucao { get; set; }
+        public bool Ativo { get; set; }
+        public System.DateTime DatInc { get; set; }
+        public System.DateTime DatAlt { get; set; }
+    
+        public virtual Livros Livros { get; set; }
+        public virtual Usuarios Usuarios { get; set; }
+        public virtual Usuarios Usuarios1 { get; set; }
+        public virtual Usuarios Usuarios2 { get; set; }
     }
 }

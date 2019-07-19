@@ -13,10 +13,10 @@ namespace DesingView.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SistemaBibliotecaDBEntities : DbContext
+    public partial class SistemaBibliotecaDBEntities2 : DbContext
     {
-        public SistemaBibliotecaDBEntities()
-            : base("name=SistemaBibliotecaDBEntities")
+        public SistemaBibliotecaDBEntities2()
+            : base("name=SistemaBibliotecaDBEntities2")
         {
         }
     
@@ -25,11 +25,11 @@ namespace DesingView.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Autore> Autores { get; set; }
-        public virtual DbSet<Editora> Editoras { get; set; }
-        public virtual DbSet<Genero> Generos { get; set; }
-        public virtual DbSet<Livro> Livros { get; set; }
-        public virtual DbSet<Usuario> Usuarios { get; set; }
-        public virtual DbSet<LivroAutor> LivroAutors { get; set; }
+        public virtual DbSet<Autores> Autores { get; set; }
+        public virtual DbSet<Editoras> Editoras { get; set; }
+        public virtual DbSet<Generos> Generos { get; set; }
+        public virtual DbSet<Livros> Livros { get; set; }
+        public virtual DbSet<Locacao> Locacao { get; set; }
+        public virtual DbSet<Usuarios> Usuarios { get; set; }
     }
 }

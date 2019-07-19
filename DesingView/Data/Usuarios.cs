@@ -12,13 +12,16 @@ namespace DesingView.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuario
+    public partial class Usuarios
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Usuario()
+        public Usuarios()
         {
-            this.Livros = new HashSet<Livro>();
-            this.Livros1 = new HashSet<Livro>();
+            this.Livros = new HashSet<Livros>();
+            this.Livros1 = new HashSet<Livros>();
+            this.Locacao = new HashSet<Locacao>();
+            this.Locacao1 = new HashSet<Locacao>();
+            this.Locacao2 = new HashSet<Locacao>();
         }
     
         public int Id { get; set; }
@@ -33,8 +36,14 @@ namespace DesingView.Data
         public System.DateTime DatAlt { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Livro> Livros { get; set; }
+        public virtual ICollection<Livros> Livros { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Livro> Livros1 { get; set; }
+        public virtual ICollection<Livros> Livros1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Locacao> Locacao { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Locacao> Locacao1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Locacao> Locacao2 { get; set; }
     }
 }
