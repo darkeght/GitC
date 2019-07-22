@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beep", "Beep\Beep.csproj", "{FC9CF48E-F42D-4058-9BCA-432E66415514}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC9CF48E-F42D-4058-9BCA-432E66415514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC9CF48E-F42D-4058-9BCA-432E66415514}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC9CF48E-F42D-4058-9BCA-432E66415514}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC9CF48E-F42D-4058-9BCA-432E66415514}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D037EA0-E956-4967-A24B-2E3C94041E49}
+	EndGlobalSection
+EndGlobal
