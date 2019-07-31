@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace AlocacaoCarros
 {
+    public static class StringExtension
+    {
+        public static string StringCall(this String str)
+        {
+            Console.WriteLine("Teste");
+            return Console.ReadLine();
+        }
+    }
     class Program
     {
         static string[,] baseDeCarros;
@@ -32,8 +40,12 @@ namespace AlocacaoCarros
                 opcaoMenu = MenuPrincipal();
             }
 
+            "Nome".StringCall();
+
             Console.ReadKey();
         }
+
+        
 
         /// <summary>
         /// Mostra as informações iniciais do sistema.
