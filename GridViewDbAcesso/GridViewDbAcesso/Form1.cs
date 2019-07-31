@@ -21,7 +21,12 @@ namespace GridViewDbAcesso
         {
             // TODO: This line of code loads data into the 'querysInnerJoinDataSet.Carros' table. You can move, or remove it, as needed.
             this.carrosTableAdapter.Fill(this.querysInnerJoinDataSet.Carros);
-
+        }
+        private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Validate();
+            this.carrosBindingSource.EndEdit();
+            this.carrosTableAdapter.Update(this.querysInnerJoinDataSet.Carros);
         }
     }
 }

@@ -99,5 +99,13 @@ namespace TabelaDeVisualizacaoDeValores
 
             BindList();
         }
+
+        private void TextBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
     }
 }
