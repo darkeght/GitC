@@ -1,4 +1,6 @@
-﻿using DataGridViewExample.Edicao;
+﻿
+using DataGridViewExample.Adicionar;
+using DataGridViewExample.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -65,6 +67,32 @@ namespace DataGridViewExample
         {
             Form4 frmVendas = new Form4();
             frmVendas.ShowDialog();
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            Form5 shw = new Form5();
+            shw.Show();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            //Abre o formulario de atualização 
+            frmAdicionar formAdd = new frmAdicionar();
+            formAdd.ShowDialog();
+            //Insert na tabela do banco de dados de carros o novo registro
+            this.carrosTableAdapter.Insert(
+                formAdd.carrosRow.Modelo,
+                formAdd.carrosRow.Ano,
+                formAdd.carrosRow.Marca,
+                true,
+                1,
+                1,
+                DateTime.Now,
+                DateTime.Now
+                );
+            //Atualiza a tabela
+            this.carrosTableAdapter.Fill(this.querysInnerJoinDataSet.Carros);
         }
     }
 }
