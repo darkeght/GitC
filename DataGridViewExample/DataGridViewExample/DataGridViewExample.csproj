@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Edicao\frmEdicaoCarros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\frmEdicaoCarros.Designer.cs">
+      <DependentUpon>frmEdicaoCarros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuerysInnerJoinDataSet1.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Edicao\frmEdicaoCarros.resx">
+      <DependentUpon>frmEdicaoCarros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

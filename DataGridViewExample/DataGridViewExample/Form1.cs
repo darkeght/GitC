@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridViewExample.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -54,6 +55,11 @@ namespace DataGridViewExample
                 case 0: {
                         this.carrosTableAdapter.DeleteQuery(carSelect.Id);
                     }break;
+                case 1: {
+                        frmEdicaoCarros editCarro = new frmEdicaoCarros();
+                        editCarro.CarrosRow = carSelect;
+                        editCarro.ShowDialog();
+                    } break;
             }
 
             this.carrosTableAdapter.CustomQuery(querysInnerJoinDataSet1.Carros);
