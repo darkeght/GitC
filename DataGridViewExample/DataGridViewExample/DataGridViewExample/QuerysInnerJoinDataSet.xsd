@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="QuerysInnerJoinDataSet1" targetNamespace="http://tempuri.org/QuerysInnerJoinDataSet1.xsd" xmlns:mstns="http://tempuri.org/QuerysInnerJoinDataSet1.xsd" xmlns="http://tempuri.org/QuerysInnerJoinDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="QuerysInnerJoinDataSet" targetNamespace="http://tempuri.org/QuerysInnerJoinDataSet.xsd" xmlns:mstns="http://tempuri.org/QuerysInnerJoinDataSet.xsd" xmlns="http://tempuri.org/QuerysInnerJoinDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -43,8 +43,8 @@ SELECT Id, Modelo, Ano, Marca, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Carros
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Id, Modelo, Ano, Marca, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Carros</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id, Modelo, Ano, Marca, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Carros where Ativo = 1</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -87,44 +87,7 @@ SELECT Id, Modelo, Ano, Marca, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Carros
               <Mapping SourceColumn="DatInc" DataSetColumn="DatInc" />
               <Mapping SourceColumn="DatAlt" DataSetColumn="DatAlt" />
             </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="QuerysInnerJoinConnectionString (Settings)" DbObjectName="QuerysInnerJoin.dbo.Carros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomInativeValues" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="CustomInativeValues" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="CustomInativeValues">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Id, Modelo, Ano, Marca, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Carros where Ativo = 0</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="QuerysInnerJoinConnectionString (Settings)" DbObjectName="QuerysInnerJoin.dbo.Carros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomQuery" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="CustomQuery" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CustomQuery">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Id, Modelo, Ano, Marca, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Carros where Ativo = 1</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="QuerysInnerJoinConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteQuery">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>UPDATE [dbo].[Carros] SET Ativo = 0 where ([Id] = @Original_Id)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="Original_Id" ColumnName="Id" DataSourceName="QuerysInnerJoin.dbo.Carros" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_Id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
-              </DbSource>
-              <DbSource ConnectionRef="QuerysInnerJoinConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateQuery">
-                <UpdateCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>UPDATE [dbo].[Carros] SET Ativo = 1 WHERE  ([Id] = @Original_Id)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="Original_Id" ColumnName="Id" DataSourceName="QuerysInnerJoin.dbo.Carros" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_Id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </UpdateCommand>
-              </DbSource>
-            </Sources>
+            <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MarcasTableAdapter" GeneratorDataComponentClassName="MarcasTableAdapter" Name="Marcas" UserDataComponentName="MarcasTableAdapter">
             <MainSource>
@@ -158,8 +121,8 @@ SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Marcas WHERE (Id = S
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Marcas</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Marcas where Ativo = 1</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -196,24 +159,7 @@ SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Marcas WHERE (Id = @
               <Mapping SourceColumn="DatInc" DataSetColumn="DatInc" />
               <Mapping SourceColumn="DatAlt" DataSetColumn="DatAlt" />
             </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="QuerysInnerJoinConnectionString (Settings)" DbObjectName="QuerysInnerJoin.dbo.Marcas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomQuery" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="CustomQuery" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CustomQuery">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Marcas where Ativo = 1</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="QuerysInnerJoinConnectionString (Settings)" DbObjectName="QuerysInnerJoin.dbo.Marcas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Marcas WHERE Ativo = 1</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </Sources>
+            <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UsuariosTableAdapter" GeneratorDataComponentClassName="UsuariosTableAdapter" Name="Usuarios" UserDataComponentName="UsuariosTableAdapter">
             <MainSource>
@@ -285,16 +231,7 @@ SELECT Id, Usuario, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Usuarios WHERE (I
               <Mapping SourceColumn="DatInc" DataSetColumn="DatInc" />
               <Mapping SourceColumn="DatAlt" DataSetColumn="DatAlt" />
             </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="QuerysInnerJoinConnectionString (Settings)" DbObjectName="QuerysInnerJoin.dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomQuery" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="CustomQuery" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CustomQuery">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Id, Usuario, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Usuarios where Ativo = 1</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </Sources>
+            <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VendasTableAdapter" GeneratorDataComponentClassName="VendasTableAdapter" Name="Vendas" UserDataComponentName="VendasTableAdapter">
             <MainSource>
@@ -376,46 +313,6 @@ SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM 
               <Mapping SourceColumn="DatInc" DataSetColumn="DatInc" />
               <Mapping SourceColumn="DatAlt" DataSetColumn="DatAlt" />
             </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="QuerysInnerJoinConnectionString (Settings)" DbObjectName="QuerysInnerJoin.dbo.Vendas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomQuery" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="CustomQuery" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CustomQuery">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Vendas where Ativo = 1</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </Sources>
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="QuerysInnerJoinConnectionString (Settings)" DbObjectName="SELECT 'carros' AS 'Tabela', Id FROM Carros WHERE (Ativo = 0) UNION ALL SELECT 'marcas' AS 'Tabela', Id FROM Marcas WHERE (Ativo = 0) UNION ALL SELECT 'vendas' AS 'Tabela', Id FROM Vendas WHERE (Ativo = 0) UNION ALL SELECT 'usuarios' AS 'Tabela', Id FROM Usuarios WHERE (Ativo = 0)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="GetAllData" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="GetAllData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="GetAllData">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT * FROM (SELECT 'carros' AS 'Tabela', Id
-FROM   Carros
-WHERE (Ativo = 0)
-UNION ALL
-SELECT 'marcas' AS 'Tabela', Id
-FROM   Marcas
-WHERE (Ativo = 0)
-UNION ALL
-SELECT 'vendas' AS 'Tabela', Id
-FROM   Vendas
-WHERE (Ativo = 0)
-UNION ALL
-SELECT 'usuarios' AS 'Tabela', Id
-FROM   Usuarios
-WHERE (Ativo = 0)) TEMP</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Tabela" DataSetColumn="Tabela" />
-              <Mapping SourceColumn="Id" DataSetColumn="Id" />
-            </Mappings>
             <Sources />
           </TableAdapter>
         </Tables>
@@ -423,7 +320,7 @@ WHERE (Ativo = 0)) TEMP</CommandText>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="QuerysInnerJoinDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QuerysInnerJoinDataSet1" msprop:Generator_UserDSName="QuerysInnerJoinDataSet1">
+  <xs:element name="QuerysInnerJoinDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QuerysInnerJoinDataSet" msprop:Generator_UserDSName="QuerysInnerJoinDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="Carros" msprop:Generator_TableClassName="CarrosDataTable" msprop:Generator_TableVarName="tableCarros" msprop:Generator_RowChangedName="CarrosRowChanged" msprop:Generator_TablePropName="Carros" msprop:Generator_RowDeletingName="CarrosRowDeleting" msprop:Generator_RowChangingName="CarrosRowChanging" msprop:Generator_RowEvHandlerName="CarrosRowChangeEventHandler" msprop:Generator_RowDeletedName="CarrosRowDeleted" msprop:Generator_RowClassName="CarrosRow" msprop:Generator_UserTableName="Carros" msprop:Generator_RowEvArgName="CarrosRowChangeEvent">
@@ -444,7 +341,6 @@ WHERE (Ativo = 0)) TEMP</CommandText>
               <xs:element name="UsuAlt" msprop:Generator_ColumnVarNameInTable="columnUsuAlt" msprop:Generator_ColumnPropNameInRow="UsuAlt" msprop:Generator_ColumnPropNameInTable="UsuAltColumn" msprop:Generator_UserColumnName="UsuAlt" type="xs:int" />
               <xs:element name="DatInc" msprop:Generator_ColumnVarNameInTable="columnDatInc" msprop:Generator_ColumnPropNameInRow="DatInc" msprop:Generator_ColumnPropNameInTable="DatIncColumn" msprop:Generator_UserColumnName="DatInc" type="xs:dateTime" />
               <xs:element name="DatAlt" msprop:Generator_ColumnVarNameInTable="columnDatAlt" msprop:Generator_ColumnPropNameInRow="DatAlt" msprop:Generator_ColumnPropNameInTable="DatAltColumn" msprop:Generator_UserColumnName="DatAlt" type="xs:dateTime" />
-              <xs:element name="DeletCommand" msprop:Generator_ColumnVarNameInTable="columnDeletCommand" msprop:Generator_ColumnPropNameInRow="DeletCommand" msprop:Generator_ColumnPropNameInTable="DeletCommandColumn" msprop:Generator_UserColumnName="DeletCommand" type="xs:string" default="Deletar" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -464,7 +360,6 @@ WHERE (Ativo = 0)) TEMP</CommandText>
               <xs:element name="UsuAlt" msprop:Generator_ColumnVarNameInTable="columnUsuAlt" msprop:Generator_ColumnPropNameInRow="UsuAlt" msprop:Generator_ColumnPropNameInTable="UsuAltColumn" msprop:Generator_UserColumnName="UsuAlt" type="xs:int" />
               <xs:element name="DatInc" msprop:Generator_ColumnVarNameInTable="columnDatInc" msprop:Generator_ColumnPropNameInRow="DatInc" msprop:Generator_ColumnPropNameInTable="DatIncColumn" msprop:Generator_UserColumnName="DatInc" type="xs:dateTime" />
               <xs:element name="DatAlt" msprop:Generator_ColumnVarNameInTable="columnDatAlt" msprop:Generator_ColumnPropNameInRow="DatAlt" msprop:Generator_ColumnPropNameInTable="DatAltColumn" msprop:Generator_UserColumnName="DatAlt" type="xs:dateTime" />
-              <xs:element name="DeletCommand" msprop:Generator_ColumnVarNameInTable="columnDeletCommand" msprop:Generator_ColumnPropNameInRow="DeletCommand" msprop:Generator_ColumnPropNameInTable="DeletCommandColumn" msprop:Generator_UserColumnName="DeletCommand" type="xs:string" default="Deletar" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -499,21 +394,6 @@ WHERE (Ativo = 0)) TEMP</CommandText>
               <xs:element name="UsuAlt" msprop:Generator_ColumnVarNameInTable="columnUsuAlt" msprop:Generator_ColumnPropNameInRow="UsuAlt" msprop:Generator_ColumnPropNameInTable="UsuAltColumn" msprop:Generator_UserColumnName="UsuAlt" type="xs:int" />
               <xs:element name="DatInc" msprop:Generator_ColumnVarNameInTable="columnDatInc" msprop:Generator_ColumnPropNameInRow="DatInc" msprop:Generator_ColumnPropNameInTable="DatIncColumn" msprop:Generator_UserColumnName="DatInc" type="xs:dateTime" />
               <xs:element name="DatAlt" msprop:Generator_ColumnVarNameInTable="columnDatAlt" msprop:Generator_ColumnPropNameInRow="DatAlt" msprop:Generator_ColumnPropNameInTable="DatAltColumn" msprop:Generator_UserColumnName="DatAlt" type="xs:dateTime" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Tabela" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTabela" msprop:Generator_ColumnPropNameInRow="Tabela" msprop:Generator_ColumnPropNameInTable="TabelaColumn" msprop:Generator_UserColumnName="Tabela" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="8" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Id" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" minOccurs="0" />
-              <xs:element name="RestaurarCommand" msprop:Generator_ColumnVarNameInTable="columnRestaurarCommand" msprop:Generator_ColumnPropNameInRow="RestaurarCommand" msprop:Generator_ColumnPropNameInTable="RestaurarCommandColumn" msprop:Generator_UserColumnName="RestaurarCommand" type="xs:string" default="Restaurar" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

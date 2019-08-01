@@ -10,22 +10,24 @@ using System.Windows.Forms;
 
 namespace DataGridViewExample.Edicao
 {
-    public partial class frmEdicaoCarros : Form
+    public partial class frmEditarCarro : Form
     {
-        public frmEdicaoCarros()
+        public frmEditarCarro()
         {
             InitializeComponent();
         }
 
-        public DataGridViewExample.QuerysInnerJoinDataSet1.CarrosRow CarrosRow;
 
-        private void FrmEdicaoCarros_Load(object sender, EventArgs e)
+        public DataGridViewExample.QuerysInnerJoinDataSet.CarrosRow CarrosRow;
+
+        private void FrmEditarCarro_Load(object sender, EventArgs e)
         {
-             this.marcasTableAdapter.FillBy(this.querysInnerJoinDataSet1.Marcas);
+            // TODO: This line of code loads data into the 'querysInnerJoinDataSet.Marcas' table. You can move, or remove it, as needed.
+            this.marcasTableAdapter.Fill(this.querysInnerJoinDataSet.Marcas);
 
-             textBox1.Text = CarrosRow.Modelo;
-             dateTimePicker1.Value = CarrosRow.Ano;
-             comboBox1.SelectedValue = CarrosRow.Marca;
+            textBox1.Text           = CarrosRow.Modelo;
+            dateTimePicker1.Value   = CarrosRow.Ano;
+            comboBox1.SelectedValue = CarrosRow.Marca;
         }
 
         private void Button1_Click(object sender, EventArgs e)
