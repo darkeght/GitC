@@ -1,6 +1,6 @@
 ﻿namespace DataGridViewExample
 {
-    partial class Form1
+    partial class Form4
     {
         /// <summary>
         /// Required designer variable.
@@ -29,29 +29,35 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.carrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.querysInnerJoinDataSet = new DataGridViewExample.QuerysInnerJoinDataSet();
-            this.carrosTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSetTableAdapters.CarrosTableAdapter();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.deletar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.querysInnerJoinDataSet = new DataGridViewExample.QuerysInnerJoinDataSet();
+            this.vendasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vendasTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSetTableAdapters.VendasTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.usuIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendasBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1, -3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 50);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "ADICIONAR";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -61,45 +67,21 @@
             this.deletar,
             this.editar,
             this.idDataGridViewTextBoxColumn,
-            this.modeloDataGridViewTextBoxColumn,
-            this.anoDataGridViewTextBoxColumn,
-            this.marcaDataGridViewTextBoxColumn,
+            this.carroDataGridViewTextBoxColumn,
+            this.quantidadeDataGridViewTextBoxColumn,
+            this.valorDataGridViewTextBoxColumn,
             this.ativoDataGridViewCheckBoxColumn,
             this.usuIncDataGridViewTextBoxColumn,
             this.usuAltDataGridViewTextBoxColumn,
             this.datIncDataGridViewTextBoxColumn,
             this.datAltDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.carrosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 56);
+            this.dataGridView1.DataSource = this.vendasBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(1, 53);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(798, 401);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 50);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "ADICIONAR";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // carrosBindingSource
-            // 
-            this.carrosBindingSource.DataMember = "Carros";
-            this.carrosBindingSource.DataSource = this.querysInnerJoinDataSet;
-            // 
-            // querysInnerJoinDataSet
-            // 
-            this.querysInnerJoinDataSet.DataSetName = "QuerysInnerJoinDataSet";
-            this.querysInnerJoinDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // carrosTableAdapter
-            // 
-            this.carrosTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.TabIndex = 6;
             // 
             // deletar
             // 
@@ -125,6 +107,20 @@
             this.editar.UseColumnTextForButtonValue = true;
             this.editar.Width = 150;
             // 
+            // querysInnerJoinDataSet
+            // 
+            this.querysInnerJoinDataSet.DataSetName = "QuerysInnerJoinDataSet";
+            this.querysInnerJoinDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vendasBindingSource
+            // 
+            this.vendasBindingSource.DataMember = "Vendas";
+            this.vendasBindingSource.DataSource = this.querysInnerJoinDataSet;
+            // 
+            // vendasTableAdapter
+            // 
+            this.vendasTableAdapter.ClearBeforeFill = true;
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -134,29 +130,29 @@
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Width = 150;
             // 
-            // modeloDataGridViewTextBoxColumn
+            // carroDataGridViewTextBoxColumn
             // 
-            this.modeloDataGridViewTextBoxColumn.DataPropertyName = "Modelo";
-            this.modeloDataGridViewTextBoxColumn.HeaderText = "Modelo";
-            this.modeloDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.modeloDataGridViewTextBoxColumn.Name = "modeloDataGridViewTextBoxColumn";
-            this.modeloDataGridViewTextBoxColumn.Width = 150;
+            this.carroDataGridViewTextBoxColumn.DataPropertyName = "Carro";
+            this.carroDataGridViewTextBoxColumn.HeaderText = "Carro";
+            this.carroDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.carroDataGridViewTextBoxColumn.Name = "carroDataGridViewTextBoxColumn";
+            this.carroDataGridViewTextBoxColumn.Width = 150;
             // 
-            // anoDataGridViewTextBoxColumn
+            // quantidadeDataGridViewTextBoxColumn
             // 
-            this.anoDataGridViewTextBoxColumn.DataPropertyName = "Ano";
-            this.anoDataGridViewTextBoxColumn.HeaderText = "Ano";
-            this.anoDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.anoDataGridViewTextBoxColumn.Name = "anoDataGridViewTextBoxColumn";
-            this.anoDataGridViewTextBoxColumn.Width = 150;
+            this.quantidadeDataGridViewTextBoxColumn.DataPropertyName = "Quantidade";
+            this.quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
+            this.quantidadeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
+            this.quantidadeDataGridViewTextBoxColumn.Width = 150;
             // 
-            // marcaDataGridViewTextBoxColumn
+            // valorDataGridViewTextBoxColumn
             // 
-            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
-            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
-            this.marcaDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
-            this.marcaDataGridViewTextBoxColumn.Width = 150;
+            this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
+            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
+            this.valorDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
+            this.valorDataGridViewTextBoxColumn.Width = 150;
             // 
             // ativoDataGridViewCheckBoxColumn
             // 
@@ -198,77 +194,40 @@
             this.datAltDataGridViewTextBoxColumn.Name = "datAltDataGridViewTextBoxColumn";
             this.datAltDataGridViewTextBoxColumn.Width = 150;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(161, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 50);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "MARCAS";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(321, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(154, 50);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "USUARIOS";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(481, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(154, 50);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "VENDAS";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.Button4_Click);
-            // 
-            // Form1
+            // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "Form4";
+            this.Text = "Form4";
+            this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendasBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
-        private QuerysInnerJoinDataSet querysInnerJoinDataSet;
-        private System.Windows.Forms.BindingSource carrosBindingSource;
-        private QuerysInnerJoinDataSetTableAdapters.CarrosTableAdapter carrosTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewButtonColumn deletar;
         private System.Windows.Forms.DataGridViewButtonColumn editar;
+        private QuerysInnerJoinDataSet querysInnerJoinDataSet;
+        private System.Windows.Forms.BindingSource vendasBindingSource;
+        private QuerysInnerJoinDataSetTableAdapters.VendasTableAdapter vendasTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modeloDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn anoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuIncDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuAltDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datIncDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datAltDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
     }
 }
-

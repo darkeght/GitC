@@ -31,18 +31,40 @@ namespace DataGridViewExample
                 DataGridViewExample.QuerysInnerJoinDataSet.CarrosRow;
 
             switch (e.ColumnIndex) {
-                case 0: { /*TODO: Deletar*/ }break;
+                case 0: {
+                        this.carrosTableAdapter.DeleteQuery(carrSelect.Id);
+                    } break;
                 case 1: {
-                        frmEditarCarro editCar = new frmEditarCarro();
-                        editCar.CarrosRow = carrSelect;
+                        frmEditarCarro editCar = new frmEditarCarro
+                        {
+                            CarrosRow = carrSelect
+                        };
+
                         editCar.ShowDialog();
 
-
+                        this.carrosTableAdapter.Update(editCar.CarrosRow);
                     } break;
             }
 
-
             this.carrosTableAdapter.Fill(this.querysInnerJoinDataSet.Carros);
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Form2 frmMarcas = new Form2();
+            frmMarcas.ShowDialog();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            Form3 frmUsuarios = new Form3();
+            frmUsuarios.ShowDialog();
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            Form4 frmVendas = new Form4();
+            frmVendas.ShowDialog();
         }
     }
 }
