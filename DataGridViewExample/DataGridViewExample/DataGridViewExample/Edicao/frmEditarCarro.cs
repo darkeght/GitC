@@ -27,7 +27,7 @@ namespace DataGridViewExample.Edicao
 
             textBox1.Text           = CarrosRow.Modelo;
             dateTimePicker1.Value   = CarrosRow.Ano;
-            comboBox1.SelectedValue = CarrosRow.Marca;
+            comboBox1.SelectedValue = CarrosRow.Marca;   //
         }
 
         private void Button1_Click(object sender, EventArgs e)
