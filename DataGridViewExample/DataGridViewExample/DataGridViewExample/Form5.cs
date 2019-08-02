@@ -24,7 +24,26 @@ namespace DataGridViewExample
 
             startXPoss = new Random().Next(0, 1000);
             startLocationY = new Random().Next(0, 800);
-            timer1.Interval = new Random().Next(0, 200);
+            timer1.Interval = new Random().Next(10, 200);
+            speedMultiple = new Random().Next(10, 100);
+
+            switch (new Random().Next(0, 3))
+            {
+                case 0: { this.pictureBox1.Image = 
+                            global::DataGridViewExample.Properties.Resources._7ChVWbF; }break;
+                case 1:
+                    {
+                        this.pictureBox1.Image =
+                      global::DataGridViewExample.Properties.Resources.Bom_Dia_pra_você_1;
+                    }
+                    break;
+                case 2:
+                    {
+                        this.pictureBox1.Image =
+                      global::DataGridViewExample.Properties.Resources.tumblr_56d2c67c64bee9fc69ed718079136ba4_ce3234c9_500;
+                    }
+                    break;
+            }
 
             timer1.Start();
         }
@@ -32,6 +51,7 @@ namespace DataGridViewExample
         int startLocationY = 0;
         bool incrementX = true;
         bool incrementY= true;
+        int speedMultiple = 5;
         private void Timer1_Tick(object sender, EventArgs e)
         {
             this.Location = new Point(startXPoss, startLocationY);
@@ -42,7 +62,7 @@ namespace DataGridViewExample
         {
             if (incrementY)
             {
-                startLocationY = startLocationY + 5;
+                startLocationY = startLocationY + speedMultiple;
 
                 if ((startLocationY + 149) >= 800)
                 {
@@ -51,7 +71,7 @@ namespace DataGridViewExample
             }
             else
             {
-                startLocationY = startLocationY - 5;
+                startLocationY = startLocationY - speedMultiple;
 
                 if (startLocationY <= 0)
                 {
@@ -64,7 +84,7 @@ namespace DataGridViewExample
         {
             if (incrementX)
             {
-                startXPoss = startXPoss + 5;
+                startXPoss = startXPoss + speedMultiple;
 
                 if ((startXPoss + 223) >= 1380)
                 {
@@ -73,7 +93,7 @@ namespace DataGridViewExample
             }
             else
             {
-                startXPoss = startXPoss - 5;
+                startXPoss = startXPoss - speedMultiple;
 
                 if (startXPoss <= 0)
                 {

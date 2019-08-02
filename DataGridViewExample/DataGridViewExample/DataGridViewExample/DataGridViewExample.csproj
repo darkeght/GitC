@@ -135,6 +135,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -159,6 +160,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7ChVWbF.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bom-Dia-pra-você-1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tumblr_56d2c67c64bee9fc69ed718079136ba4_ce3234c9_500.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
