@@ -33,9 +33,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.deletar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.querysInnerJoinDataSet = new DataGridViewExample.QuerysInnerJoinDataSet();
-            this.vendasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vendasTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSetTableAdapters.VendasTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,9 +42,12 @@
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vendasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.querysInnerJoinDataSet = new DataGridViewExample.QuerysInnerJoinDataSet();
+            this.vendasTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSetTableAdapters.VendasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -58,6 +58,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "ADICIONAR";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // dataGridView1
             // 
@@ -106,20 +107,6 @@
             this.editar.Text = "Editar";
             this.editar.UseColumnTextForButtonValue = true;
             this.editar.Width = 150;
-            // 
-            // querysInnerJoinDataSet
-            // 
-            this.querysInnerJoinDataSet.DataSetName = "QuerysInnerJoinDataSet";
-            this.querysInnerJoinDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vendasBindingSource
-            // 
-            this.vendasBindingSource.DataMember = "Vendas";
-            this.vendasBindingSource.DataSource = this.querysInnerJoinDataSet;
-            // 
-            // vendasTableAdapter
-            // 
-            this.vendasTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -194,6 +181,20 @@
             this.datAltDataGridViewTextBoxColumn.Name = "datAltDataGridViewTextBoxColumn";
             this.datAltDataGridViewTextBoxColumn.Width = 150;
             // 
+            // vendasBindingSource
+            // 
+            this.vendasBindingSource.DataMember = "Vendas";
+            this.vendasBindingSource.DataSource = this.querysInnerJoinDataSet;
+            // 
+            // querysInnerJoinDataSet
+            // 
+            this.querysInnerJoinDataSet.DataSetName = "QuerysInnerJoinDataSet";
+            this.querysInnerJoinDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vendasTableAdapter
+            // 
+            this.vendasTableAdapter.ClearBeforeFill = true;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -205,8 +206,8 @@
             this.Text = "Form4";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

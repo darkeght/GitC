@@ -50,37 +50,34 @@ namespace DataGridViewExample
 
             this.carrosTableAdapter.Fill(this.querysInnerJoinDataSet.Carros);
         }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             Form2 frmMarcas = new Form2();
             frmMarcas.ShowDialog();
         }
-
         private void Button3_Click(object sender, EventArgs e)
         {
             Form3 frmUsuarios = new Form3();
             frmUsuarios.ShowDialog();
         }
-
         private void Button4_Click(object sender, EventArgs e)
         {
             Form4 frmVendas = new Form4();
             frmVendas.ShowDialog();
         }
-
         private void Button5_Click(object sender, EventArgs e)
         {
             Form5 shw = new Form5();
             shw.Show();
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             //Abre o formulario de atualização 
             frmAdicionar formAdd = new frmAdicionar();
             formAdd.ShowDialog();
+
             //Insert na tabela do banco de dados de carros o novo registro
+            if(!string.IsNullOrEmpty(formAdd.carrosRow?.Modelo))
             this.carrosTableAdapter.Insert(
                 formAdd.carrosRow.Modelo,
                 formAdd.carrosRow.Ano,
