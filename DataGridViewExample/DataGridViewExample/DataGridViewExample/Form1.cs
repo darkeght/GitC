@@ -1,6 +1,7 @@
 ﻿
 using DataGridViewExample.Adicionar;
 using DataGridViewExample.Edicao;
+using DataGridViewExample.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,7 @@ namespace DataGridViewExample
         {
             // TODO: This line of code loads data into the 'querysInnerJoinDataSet.Carros' table. You can move, or remove it, as needed.
             this.carrosTableAdapter.Fill(this.querysInnerJoinDataSet.Carros);
+            Session.Id = 9;
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
