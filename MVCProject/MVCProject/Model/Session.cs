@@ -8,6 +8,6 @@ namespace MVCProject.Model
 {
     public static class Session
     {
-        public static Usuario user;
+        public static Usuario user = new Usuario();
     }
 }

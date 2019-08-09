@@ -59,42 +59,9 @@
     <Compile Include="Model\Livro.cs" />
     <Compile Include="Model\LivroAutor.cs" />
     <Compile Include="Model\Locacao.cs" />
-    <Compile Include="Model\Session.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SistemaBibliotecaDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SistemaBibliotecaDBDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="View\frmLivro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\frmLivro.Designer.cs">
-      <DependentUpon>frmLivro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\frmLivroAutor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\frmLivroAutor.Designer.cs">
-      <DependentUpon>frmLivroAutor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\frmPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\frmPrincipal.Designer.cs">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\frmUsuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\frmUsuarios.Designer.cs">
-      <DependentUpon>frmUsuarios.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -104,18 +71,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\frmLivro.resx">
-      <DependentUpon>frmLivro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\frmLivroAutor.resx">
-      <DependentUpon>frmLivroAutor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\frmPrincipal.resx">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\frmUsuarios.resx">
-      <DependentUpon>frmUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -125,17 +80,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SistemaBibliotecaDBDataSet.xsc">
-      <DependentUpon>SistemaBibliotecaDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="SistemaBibliotecaDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SistemaBibliotecaDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="SistemaBibliotecaDBDataSet.xss">
-      <DependentUpon>SistemaBibliotecaDBDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

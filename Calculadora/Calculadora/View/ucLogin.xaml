@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="Calculadora.View.ucLogin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Calculadora.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="42*"/>
+            <ColumnDefinition Width="315*"/>
+            <ColumnDefinition Width="42*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="102*"/>
+            <RowDefinition Height="102*"/>
+            <RowDefinition Height="102*"/>
+            <RowDefinition Height="102*"/>
+            <RowDefinition Height="102*"/>
+        </Grid.RowDefinitions>
+        <TextBox     Name="tbxLogin"    FontSize="50"   Margin="4,12,6,0" TextWrapping="Wrap"     Height="77" Text="admin"           Grid.Row="1" Grid.Column="1"/>
+        <PasswordBox Name="tbxPass"    FontSize="50"   Margin="4,12,6,0" VerticalAlignment="Top" Height="77"  Password="admin"       Grid.Row="2" Grid.Column="1"/>
+        <Button      Name="btnLogin"    FontSize="50"   Margin="4,12,6,0"             Width="306" Height="79" Content="Login"   Grid.Row="3" Grid.Column="1" Click="Button_Click"/>
+    </Grid>
+</UserControl>

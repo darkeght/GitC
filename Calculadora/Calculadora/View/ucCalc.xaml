@@ -1,0 +1,137 @@
+﻿<UserControl x:Class="Calculadora.View.ucCalc"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Calculadora.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="490" d:DesignWidth="390">
+    <UserControl.Resources>
+        <LinearGradientBrush x:Key="rcsBackGround" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#CCF2F6F8" Offset="0"/>
+            <GradientStop Color="#CCE0EFF9" Offset="1"/>
+            <GradientStop Color="#CCD8E1E7" Offset="0.5"/>
+            <GradientStop Color="#CCB5C6D0" Offset="0.672"/>
+        </LinearGradientBrush>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Name="tbkVisor" Text="" FontSize="50" Margin="10.333,5,5.333,6.333" TextWrapping="Wrap" Background="{StaticResource rcsBackGround}" Grid.Column="1"><InlineUIContainer>
+                <Label Content="..." FontSize="7.2" Height="20" Width="300"/>
+            </InlineUIContainer></TextBlock>
+
+        <Button Click="Button_Click"
+                CommandParameter="*"
+                Margin="8,9,234,9" 
+                Background="{StaticResource rcsBackGround}" Grid.Row="1" Grid.Column="1">
+            <TextBlock Text="*" Height="33" FontSize="36" Width="61" TextAlignment="Center" />
+        </Button>
+        <Button  Click="Button_Click"
+                CommandParameter="+"
+                Margin="84.667,9,158,9" 
+                Background="{StaticResource rcsBackGround}" Grid.Row="1" Grid.Column="1">
+            <TextBlock Text="+" Height="52" FontSize="36" Width="63"  TextAlignment="Center" LineHeight="9" />
+        </Button>
+        <Button  Click="Button_Click"
+                CommandParameter="/"
+                Margin="160.667,9,82,9" 
+                Background="{StaticResource rcsBackGround}" Grid.Row="1" Grid.Column="1">
+            <TextBlock Text="/" Height="52" FontSize="36" Width="63"  TextAlignment="Center" LineHeight="9" />
+        </Button>
+        <Button 
+            Click="Button_Click"
+            CommandParameter="-"
+            Margin="236.667,9,6,9" 
+            Background="{StaticResource rcsBackGround}" Grid.Row="1" Grid.Column="1">
+            <TextBlock Text="-" Height="52" FontSize="36" Width="63"  TextAlignment="Center" LineHeight="9" />
+        </Button>
+        <Button Click="Button_Click"
+            CommandParameter="1"
+            Margin="8.667,9,234,9" 
+            Background="{StaticResource rcsBackGround}" Grid.Row="2" Grid.Column="1">
+            <TextBlock Text="1" Height="52" FontSize="36" Width="63"  TextAlignment="Center" LineHeight="9" />
+        </Button>
+        <Button  Click="Button_Click"
+            CommandParameter="2"
+            Margin="84.667,9,158,9" 
+            Background="{StaticResource rcsBackGround}" Grid.Row="2" Grid.Column="1">
+            <TextBlock Text="2" Height="52" FontSize="36" Width="63"  TextAlignment="Center" LineHeight="9" />
+        </Button>
+        <Button  Click="Button_Click"
+            CommandParameter="3"
+            Margin="160.667,9,82,9" 
+            Background="{StaticResource rcsBackGround}" Grid.Row="2" Grid.Column="1">
+            <TextBlock Text="3" Height="52" FontSize="36" Width="63"  TextAlignment="Center" LineHeight="9" />
+        </Button>
+        <Button 
+            Click="Button_Click"
+            CommandParameter="4"
+            Margin="236.667,9,6,9" 
+            Background="{StaticResource rcsBackGround}" Grid.Row="2" Grid.Column="1">
+            <TextBlock Text="4" Height="52" FontSize="36" Width="63"  TextAlignment="Center" LineHeight="9" />
+        </Button>
+        <Button Click="Button_Click"
+            CommandParameter="5"
+            Margin="8.667,9,234,9" 
+            Background="{StaticResource rcsBackGround}" Grid.Row="3" Grid.Column="1">
+            <TextBlock Text="5" Height="52" FontSize="36" Width="63"  TextAlignment="Center" LineHeight="9" />
+        </Button>
+        <Button  Click="Button_Click"
+            CommandParameter="6"
+            Margin="84.667,9,158,9" 
+            Background="{StaticResource rcsBackGround}" Grid.Row="3" Grid.Column="1">
+            <TextBlock Text="6" Height="52" FontSize="36" Width="63"  TextAlignment="Center" LineHeight="9" />
+        </Button>
+        <Button  Click="Button_Click"
+            CommandParameter="7"
+            Margin="160.667,9,82,9" 
+            Background="{StaticResource rcsBackGround}" Grid.Row="3" Grid.Column="1">
+            <TextBlock Text="7" Height="52" FontSize="36" Width="63"  TextAlignment="Center" LineHeight="9" />
+        </Button>
+        <Button 
+            Click="Button_Click"
+            CommandParameter="8"
+            Margin="236.667,9,6,9" 
+            Background="{StaticResource rcsBackGround}" Grid.Row="3" Grid.Column="1">
+            <TextBlock Text="8" Height="52" FontSize="36" Width="63"  TextAlignment="Center" LineHeight="9" />
+        </Button>
+        <Button Click="Button_Click"
+            CommandParameter="9"
+            Margin="8.667,9,234,9" 
+            Background="{StaticResource rcsBackGround}" Grid.Row="4" Grid.Column="1">
+            <TextBlock Text="9" Height="52" FontSize="36" Width="63"  TextAlignment="Center" LineHeight="9" />
+        </Button>
+        <Button  Click="Button_Click"
+            CommandParameter="0"
+            Margin="84.667,9,158,9" 
+            Background="{StaticResource rcsBackGround}" Grid.Row="4" Grid.Column="1">
+            <TextBlock Text="0" Height="52" FontSize="36" Width="63"  TextAlignment="Center" LineHeight="9" />
+        </Button>
+        <Button  Click="Button_Click"
+            CommandParameter="="
+            Margin="160.667,9,7,9" 
+            Background="{StaticResource rcsBackGround}" Grid.Row="4" Grid.Column="1">
+            <TextBlock Text="=" Height="52" FontSize="36" Width="124"  TextAlignment="Center" LineHeight="9" />
+        </Button>
+        <Button  Click="Button_Click"
+            CommandParameter="C"
+            Margin="10.333,9,7.333,9" 
+            Background="{StaticResource rcsBackGround}" Grid.Row="5" Grid.Column="1">
+            <TextBlock Text="Clear" Height="52" FontSize="36" Width="124"  TextAlignment="Center" LineHeight="9" />
+        </Button>
+
+    </Grid>
+</UserControl>

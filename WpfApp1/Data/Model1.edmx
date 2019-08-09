@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="aulacsharpModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Alunos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Ativo" Type="bit" Nullable="false" />
+          <Property Name="UsuInc" Type="int" Nullable="false" />
+          <Property Name="UsuAlt" Type="int" Nullable="false" />
+          <Property Name="DateInc" Type="datetime" Nullable="false" />
+          <Property Name="DateAlt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AulaCsharp">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aluno" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Idade" Type="int" />
+          <Property Name="Ativo" Type="bit" Nullable="false" />
+          <Property Name="UsuInc" Type="int" Nullable="false" />
+          <Property Name="UsuAlt" Type="int" Nullable="false" />
+          <Property Name="Datinc" Type="date" Nullable="false" />
+          <Property Name="DatAlt" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Diario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Materia" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nota1" Type="int" Nullable="false" />
+          <Property Name="Nota2" Type="int" Nullable="false" />
+          <Property Name="Nota3" Type="int" Nullable="false" />
+          <Property Name="Media" Type="int" StoreGeneratedPattern="Computed" />
+          <Property Name="Status" Type="varchar" MaxLength="9" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Doginho">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dog" Type="varchar" MaxLength="50" />
+          <Property Name="Vendas" Type="int" />
+          <Property Name="Data" Type="datetime" />
+        </EntityType>
+        <EntityType Name="NotaAlunos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Materia" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nota" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Dog" Type="varchar" MaxLength="50" />
+          <Property Name="Vendas" Type="int" />
+          <Property Name="Data" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Ativo" Type="bit" Nullable="false" />
+          <Property Name="UserInc" Type="int" Nullable="false" />
+          <Property Name="UserAlt" Type="int" Nullable="false" />
+          <Property Name="DatInc" Type="datetime" Nullable="false" />
+          <Property Name="DatAlt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VendasCarros">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Modelo" Type="varchar" MaxLength="50" />
+          <Property Name="Ano" Type="int" />
+          <Property Name="Vendas" Type="int" />
+          <Property Name="DataVenda" Type="date" />
+        </EntityType>
+        <Association Name="FK_Alunos_UsuarioAlt">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Alunos" Type="Self.Alunos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Alunos">
+              <PropertyRef Name="UsuAlt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alunos_UsuarioInc">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Alunos" Type="Self.Alunos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Alunos">
+              <PropertyRef Name="UsuInc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="aulacsharpModelStoreContainer">
+          <EntitySet Name="Alunos" EntityType="Self.Alunos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AulaCsharp" EntityType="Self.AulaCsharp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Diario" EntityType="Self.Diario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doginho" EntityType="Self.Doginho" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NotaAlunos" EntityType="Self.NotaAlunos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VendasCarros" EntityType="Self.VendasCarros" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Alunos_UsuarioAlt" Association="Self.FK_Alunos_UsuarioAlt">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Alunos" EntitySet="Alunos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alunos_UsuarioInc" Association="Self.FK_Alunos_UsuarioInc">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Alunos" EntitySet="Alunos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="aulacsharpModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Aluno">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ativo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuInc" Type="Int32" Nullable="false" />
+          <Property Name="UsuAlt" Type="Int32" Nullable="false" />
+          <Property Name="DateInc" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateAlt" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Alunos_UsuarioAlt" FromRole="Alunos" ToRole="Usuario" />
+          <NavigationProperty Name="Usuario1" Relationship="Self.FK_Alunos_UsuarioInc" FromRole="Alunos" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="AulaCsharp">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aluno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Idade" Type="Int32" />
+          <Property Name="Ativo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuInc" Type="Int32" Nullable="false" />
+          <Property Name="UsuAlt" Type="Int32" Nullable="false" />
+          <Property Name="Datinc" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DatAlt" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="Diario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Materia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nota1" Type="Int32" Nullable="false" />
+          <Property Name="Nota2" Type="Int32" Nullable="false" />
+          <Property Name="Nota3" Type="Int32" Nullable="false" />
+          <Property Name="Media" Type="Int32" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="Status" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Doginho">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dog" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Vendas" Type="Int32" />
+          <Property Name="Data" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="NotaAluno">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Materia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nota" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Dog" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Vendas" Type="Int32" />
+          <Property Name="Data" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ativo" Type="Boolean" Nullable="false" />
+          <Property Name="UserInc" Type="Int32" Nullable="false" />
+          <Property Name="UserAlt" Type="Int32" Nullable="false" />
+          <Property Name="DatInc" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DatAlt" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Alunos" Relationship="Self.FK_Alunos_UsuarioAlt" FromRole="Usuario" ToRole="Alunos" />
+          <NavigationProperty Name="Alunos1" Relationship="Self.FK_Alunos_UsuarioInc" FromRole="Usuario" ToRole="Alunos" />
+        </EntityType>
+        <EntityType Name="VendasCarro">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ano" Type="Int32" />
+          <Property Name="Vendas" Type="Int32" />
+          <Property Name="DataVenda" Type="DateTime" Precision="0" />
+        </EntityType>
+        <Association Name="FK_Alunos_UsuarioAlt">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Alunos" Type="Self.Aluno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Alunos">
+              <PropertyRef Name="UsuAlt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alunos_UsuarioInc">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Alunos" Type="Self.Aluno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Alunos">
+              <PropertyRef Name="UsuInc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="aulacsharpEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Alunos" EntityType="Self.Aluno" />
+          <EntitySet Name="AulaCsharps" EntityType="Self.AulaCsharp" />
+          <EntitySet Name="Diarios" EntityType="Self.Diario" />
+          <EntitySet Name="Doginhoes" EntityType="Self.Doginho" />
+          <EntitySet Name="NotaAlunos" EntityType="Self.NotaAluno" />
+          <EntitySet Name="Tables" EntityType="Self.Table" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+          <EntitySet Name="VendasCarros" EntityType="Self.VendasCarro" />
+          <AssociationSet Name="FK_Alunos_UsuarioAlt" Association="Self.FK_Alunos_UsuarioAlt">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Alunos" EntitySet="Alunos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alunos_UsuarioInc" Association="Self.FK_Alunos_UsuarioInc">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Alunos" EntitySet="Alunos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="aulacsharpModelStoreContainer" CdmEntityContainer="aulacsharpEntities">
+          <EntitySetMapping Name="Alunos">
+            <EntityTypeMapping TypeName="aulacsharpModel.Aluno">
+              <MappingFragment StoreEntitySet="Alunos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+                <ScalarProperty Name="UsuInc" ColumnName="UsuInc" />
+                <ScalarProperty Name="UsuAlt" ColumnName="UsuAlt" />
+                <ScalarProperty Name="DateInc" ColumnName="DateInc" />
+                <ScalarProperty Name="DateAlt" ColumnName="DateAlt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AulaCsharps">
+            <EntityTypeMapping TypeName="aulacsharpModel.AulaCsharp">
+              <MappingFragment StoreEntitySet="AulaCsharp">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Aluno" ColumnName="Aluno" />
+                <ScalarProperty Name="Idade" ColumnName="Idade" />
+                <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+                <ScalarProperty Name="UsuInc" ColumnName="UsuInc" />
+                <ScalarProperty Name="UsuAlt" ColumnName="UsuAlt" />
+                <ScalarProperty Name="Datinc" ColumnName="Datinc" />
+                <ScalarProperty Name="DatAlt" ColumnName="DatAlt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Diarios">
+            <EntityTypeMapping TypeName="aulacsharpModel.Diario">
+              <MappingFragment StoreEntitySet="Diario">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Materia" ColumnName="Materia" />
+                <ScalarProperty Name="Nota1" ColumnName="Nota1" />
+                <ScalarProperty Name="Nota2" ColumnName="Nota2" />
+                <ScalarProperty Name="Nota3" ColumnName="Nota3" />
+                <ScalarProperty Name="Media" ColumnName="Media" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doginhoes">
+            <EntityTypeMapping TypeName="aulacsharpModel.Doginho">
+              <MappingFragment StoreEntitySet="Doginho">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Dog" ColumnName="Dog" />
+                <ScalarProperty Name="Vendas" ColumnName="Vendas" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotaAlunos">
+            <EntityTypeMapping TypeName="aulacsharpModel.NotaAluno">
+              <MappingFragment StoreEntitySet="NotaAlunos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Materia" ColumnName="Materia" />
+                <ScalarProperty Name="Nota" ColumnName="Nota" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tables">
+            <EntityTypeMapping TypeName="aulacsharpModel.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Dog" ColumnName="Dog" />
+                <ScalarProperty Name="Vendas" ColumnName="Vendas" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="aulacsharpModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+                <ScalarProperty Name="UserInc" ColumnName="UserInc" />
+                <ScalarProperty Name="UserAlt" ColumnName="UserAlt" />
+                <ScalarProperty Name="DatInc" ColumnName="DatInc" />
+                <ScalarProperty Name="DatAlt" ColumnName="DatAlt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VendasCarros">
+            <EntityTypeMapping TypeName="aulacsharpModel.VendasCarro">
+              <MappingFragment StoreEntitySet="VendasCarros">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Ano" ColumnName="Ano" />
+                <ScalarProperty Name="Vendas" ColumnName="Vendas" />
+                <ScalarProperty Name="DataVenda" ColumnName="DataVenda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
