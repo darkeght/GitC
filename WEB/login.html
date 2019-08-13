@@ -1,0 +1,238 @@
+<html>
+<head>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300);
+        @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400,500);
+        @import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+        /* fontawesome */
+        [class*="fontawesome-"]:before {
+            font-family: 'FontAwesome', sans-serif;
+        }
+
+        body {
+            background: url(http://backgrounds.picaboo.com/download/6b/bb/6bb3b414c19a45c3b6e9e4101de25709/Light%20Blur.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #login {
+            width: 393px;
+            height: 514px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            border-radius: 3px;
+            border-top: 1px solid #464c4c;
+            background: rgb(26,34,37);
+            background: -moz-linear-gradient(top, rgba(26,34,37,.96) 0%, rgba(75,87,94,0.96) 65%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(26,34,37,.96)), color-stop(65%,rgba(75,87,94,.96)));
+            background: -webkit-linear-gradient(top, rgba(26,34,37,.96) 0%,rgba(75,87,94,.96) 65%);
+            background: -o-linear-gradient(top, rgba(26,34,37,.96) 0%,rgba(75,87,94,.96) 65%);
+            background: -ms-linear-gradient(top, rgba(26,34,37,.96) 0%,rgba(75,87,94,.96) 65%);
+            background: linear-gradient(to bottom, rgba(26,34,37,.96) 0%,rgba(75,87,94,.96) 65%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a2225', endColorstr='#4b575e',GradientType=0 );
+        }
+
+        h1 {
+            width: 100%;
+            text-align: center;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 4px;
+            padding: 10px 0 20px 0;
+        }
+
+        .orangestop {
+            color: #e76744;
+        }
+
+        input {
+            width: 242px;
+            height: 65px;
+            background: #242c32;
+            border: 0;
+            border-radius: 3px;
+            border-bottom: 1px solid #646c72;
+            margin-left: 40.5px;
+            outline: 0;
+            padding-left: 70px;
+            font-family: 'Ubuntu';
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .input {
+            position: relative;
+        }
+
+        .icon {
+            position: absolute;
+            left: 65px;
+            padding: 5px 0;
+            top: -4px;
+            height: 20px;
+            width: 30px;
+            color: #fff;
+            transition: .7s;
+        }
+
+            .icon:after {
+                height: 25px;
+                width: 2px;
+                position: absolute;
+                right: 0;
+                top: 2px;
+                content: '';
+                background: #2e3a42;
+                background: -moz-linear-gradient(top, #2e3a42 0%, #3e5360 50%, #2e3a42 100%);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2e3a42), color-stop(50%,#3e5360), color-stop(100%,#2e3a42));
+                background: -webkit-linear-gradient(top, #2e3a42 0%,#3e5360 50%,#2e3a42 100%);
+                background: -o-linear-gradient(top, #2e3a42 0%,#3e5360 50%,#2e3a42 100%);
+                background: -ms-linear-gradient(top, #2e3a42 0%,#3e5360 50%,#2e3a42 100%);
+                background: linear-gradient(to bottom, #2e3a42 0%,#3e5360 50%,#2e3a42 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e3a42', endColorstr='#2e3a42',GradientType=0 );
+            }
+
+        .input:after {
+            content: "";
+            position: absolute;
+            right: 0;
+            width: 5px;
+            height: 67px;
+            border-right: 5px solid;
+            border-color: #242c32;
+            border-radius: 3px;
+        }
+
+        .color {
+            color: #e76744 !important;
+        }
+
+        span.input:after {
+            transition: .7s;
+        }
+
+        .border-color:after {
+            border-color: #e76744 !important;
+        }
+
+        .forgot {
+            margin-left: 40.5px;
+            margin-right: 40.5px;
+            float: right;
+            font-size: 12px;
+            color: #fff;
+            font-family: 'Ubuntu';
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: #2b3741;
+            border-bottom: 1px solid #68777f;
+            clear: both;
+            margin-top: 30px;
+        }
+
+        button {
+            margin-left: 40.5px;
+            margin-right: 40.5px;
+            margin-top: 20px;
+            border: 0;
+            border-top: 1px solid #f0a18b;
+            border-radius: 3px;
+            background: #e76744;
+            width: 312px;
+            height: 65px;
+            color: #fff;
+            font-size: 26px;
+            font-family: 'Ubuntu';
+            -webkit-text-shadow: 0px 1px 1px #000;
+            -moz-text-shadow: 0px 1px 1px #000;
+            text-shadow: 0px 2px 1px #000;
+            -webkit-box-shadow: 0px 1px 1px #000;
+            -moz-box-shadow: 0px 1px 1px #000;
+            box-shadow: 0px 1px 1px #000;
+        }
+
+        p {
+            color: #fff;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            font-family: 'Ubuntu';
+            margin-top: 20px;
+        }
+
+        .reg {
+            color: #e67633;
+        }
+
+        span.password-icon-style.icon.password-icon.fontawesome-lock {
+            left: -223px;
+            top: 75px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            font-size: 17px;
+        }
+
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="rain2.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <div id="login">
+        <h1>LOGIN<span class="orangestop">.</span></h1>
+        <span class="input">
+            <span class="icon username-icon fontawesome-user"></span>
+            <input id="inputLogin" type="text" class="username" placeholder="Username">
+        </span>
+        <span class="input">
+            <span class="password-icon-style icon password-icon fontawesome-lock"></span>
+            <input id="inputSenha" type="password" class="password" placeholder="Password">
+        </span>
+        <div class="divider"></div>
+        <button>ENTRAR</button>
+        <button onclick="Aumentar()" style="height: 35px;font-size: 16px;">AUMENTAR</button>
+        <button onclick="Diminuir()"  style="height: 35px;font-size: 16px;">DIMINUIR</button>
+    </div>
+    <script>
+        var countIncrement = 16;
+
+        function Aumentar() {
+            var document1 = document.getElementById('inputLogin');
+            var document2 = document.getElementById('inputSenha');
+            countIncrement = countIncrement + 1;
+
+            document1.style.fontSize = (countIncrement) + "px";
+            document2.style.fontSize = (countIncrement) + "px";
+            }
+    function Diminuir() {
+            var document1 = document.getElementById('inputLogin');
+            var document2 = document.getElementById('inputSenha');
+            countIncrement = countIncrement - 1;
+
+            document1.style.fontSize = (countIncrement) + "px";
+            document2.style.fontSize = (countIncrement) + "px";
+            }
+
+    </script>
+</body>
+</html>
