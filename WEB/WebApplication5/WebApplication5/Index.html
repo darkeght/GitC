@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap-grid.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        .field-custom {
+            background-color: #28a7456e;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .left {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- https://httpbin.org/get -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 field-custom">
+                <input id="Button1" class="col-md-6" type="button" value="Pesquisar" />
+            </div>
+            <div class="col-md-12 field-custom">
+                <input id="Button2" class="col-md-6" type="button" value="Apagar" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 field-custom right">
+                <label for="Accept">Accept:</label>
+            </div>
+            <div class="col-md-6 field-custom left">
+                <input type="text" id="Accept" placeholder="Text content" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 field-custom right">
+                <label for="Accept-Encoding">Accept-Encoding:</label>
+            </div>
+            <div class="col-md-6 field-custom left">
+                <input type="text" id="Accept-Encoding" placeholder="Text content" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 field-custom right">
+                <label for="Accept-Language">Accept-Language:</label>
+            </div>
+            <div class="col-md-6 field-custom left">
+                <input type="text" id="Accept-Language" placeholder="Text content" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 field-custom right">
+                <label for="Host">Host :</label>
+            </div>
+            <div class="col-md-6 field-custom left">
+                <input type="text" id="Host" placeholder="Text content" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 field-custom right">
+                <label for="Sec-Fetch-Mode">Sec-Fetch-Mode:</label>
+            </div>
+            <div class="col-md-6 field-custom left">
+                <input type="text" id="Sec-Fetch-Mode" placeholder="Text content" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 field-custom right">
+                <label for="Sec-Fetch-Site">Sec-Fetch-Site:</label>
+            </div>
+            <div class="col-md-6 field-custom left">
+                <input type="text" id="Sec-Fetch-Site" placeholder="Text content" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 field-custom right">
+                <label for="Upgrade-Insecure-Requests">Upgrade-Insecure-Requests :</label>
+            </div>
+            <div class="col-md-6 field-custom left">
+                <input type="text" id="Upgrade-Insecure-Requests" placeholder="Text content" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 field-custom right">
+                <label for="User-Agent">User-Agent :</label>
+            </div>
+            <div class="col-md-6 field-custom left">
+                <input type="text" id="User-Agent" placeholder="Text content" />
+            </div>
+        </div>
+    </div>
+    <div id="blockbackground" style="background-color:rgba(0,0,0,0.80);
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+left:0;">
+    </div>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script>
+        $('#blockbackground').hide();
+        $(function () {
+            $('#Button1').click(function () {
+                $('#blockbackground').show(500);
+
+                $.get('https://httpbin.org/get', function (data, textStatus, jqXHR) {
+                    $('#blockbackground').hide();
+
+                    $('#Accept').val(data.headers['Accept']);
+                    $('#Accept-Encoding').val(data.headers['Accept-Encoding']);
+                    $('#Accept-Language').val(data.headers['Accept-Language']);
+                    $('#Host').val(data.headers['Host']);
+                    $('#Sec-Fetch-Mode').val(data.headers['Sec-Fetch-Mode']);
+                    $('#Sec-Fetch-Site').val(data.headers['Sec-Fetch-Site']);
+                    $('#Upgrade-Insecure-Requests').val(data.headers['Upgrade-Insecure-Requests']);
+                    $('#User-Agent').val(data.headers['User-Agent']);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
