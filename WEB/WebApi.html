@@ -1,0 +1,49 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Projeto web Api</title>
+    <link href="css/prettify.css" rel="stylesheet">
+    <link href="css/hemisu-light.css" rel="stylesheet">
+    <link href="css/screen.css" rel="stylesheet" media="screen">
+    <link href="css/classic.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<form id="saveContactForm" method="post">   
+<input type="text" name="Usuario" placeholder="text content"/> 
+	<input type="button" id="saveContact" value="Save" />
+</form>
+<input type="text" id="UsuarioPesquisa" placeholder="Usuario para pesquisa"/> 
+<input type="button" id="buttomPesquisar" value="Pesquisar" />
+	<div id="gridContent">
+		<div id="exemplo"></div>
+	</div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.columns.min.js"></script>
+    <script>
+		$('#saveContact').click(function()
+         {
+              $.post("http://localhost:60764/Api/Usuarios",
+                    $("#saveContactForm").serialize(),
+                    function(value)
+                    {
+						GridRefresh();
+                    },"json");
+         });
+		 function GridRefresh() {
+            $.get('http://localhost:60764/Api/Usuarios', function (dataApi) {
+			    $('#gridContent').html("<div id=\"exemplo\"></div>");
+                $('#exemplo').columns({ data: dataApi });
+            });
+        }
+		 $('#buttomPesquisar').click(function()
+         {
+              $.get('http://localhost:60764/Api/Usuarios/'+ $('#UsuarioPesquisa').val(), function (dataApi) {
+			    $('#gridContent').html("<div id=\"exemplo\"></div>");
+                $('#exemplo').columns({ data: [dataApi] });
+            });
+         });
+		 
+
+    </script>
+</body>
+</html>
