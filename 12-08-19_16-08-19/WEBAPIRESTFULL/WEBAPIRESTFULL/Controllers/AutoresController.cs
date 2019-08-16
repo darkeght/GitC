@@ -7,52 +7,51 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using WEBAPIRESTFULL.Models;
-using System.Web.Http.Cors;
 
-    
 namespace WEBAPIRESTFULL.Controllers
 {
     [EnableCors(origins:"*",headers:"*",methods:"*")]
-    public class UsuariosController : ApiController
+    public class AutoresController : ApiController
     {
-        private readonly BibliotecaContextDB db = new BibliotecaContextDB();
+        private BibliotecaContextDB db = new BibliotecaContextDB();
 
-        // GET: api/Usuarios
-        public IQueryable<Usuarios> GetUsuarios()
+        // GET: api/Autores
+        public IQueryable<Autores> GetAutores()
         {
-            return db.Usuarios.Where(x => x.Ativo == true);
+            return db.Autores.Where(x => x.Ativo == true);
         }
 
-        // GET: api/Usuarios/5
-        [ResponseType(typeof(Usuarios))]
-        public IHttpActionResult GetUsuarios(int id)
+        // GET: api/Autores/5
+        [ResponseType(typeof(Autores))]
+        public IHttpActionResult GetAutores(int id)
         {
-            Usuarios usuarios = db.Usuarios.Find(id);
-            if (usuarios == null)
+            Autores autores = db.Autores.Find(id);
+            if (autores == null)
             {
                 return NotFound();
             }
 
-            return Ok(usuarios);
+            return Ok(autores);
         }
 
-        // PUT: api/Usuarios/5
+        // PUT: api/Autores/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutUsuarios(int id, Usuarios usuarios)
+        public IHttpActionResult PutAutores(int id, Autores autores)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != usuarios.Id)
+            if (id != autores.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(usuarios).State = EntityState.Modified;
+            db.Entry(autores).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +59,7 @@ namespace WEBAPIRESTFULL.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UsuariosExists(id))
+                if (!AutoresExists(id))
                 {
                     return NotFound();
                 }
@@ -73,37 +72,38 @@ namespace WEBAPIRESTFULL.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Usuarios
-        //[ResponseType(typeof(Usuarios))]
-        public IHttpActionResult PostUsuarios(Usuarios usuarios)
+        // POST: api/Autores
+        [ResponseType(typeof(Autores))]
+        public IHttpActionResult PostAutores(Autores autores)
         {
             if (!ModelState.IsValid)
             {
-                if(ModelState.Keys.First().ToString() != "usuarios.Id")
+                if(ModelState.Keys.First().ToString() != "autores.Id")
                 return BadRequest(ModelState);
             }
 
-            db.Usuarios.Add(usuarios);
+            db.Autores.Add(autores);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = usuarios.Id }, usuarios);
+            return CreatedAtRoute("DefaultApi", new { id = autores.Id }, autores);
         }
 
-        // DELETE: api/Usuarios/5
-        [ResponseType(typeof(Usuarios))]
-        public IHttpActionResult DeleteUsuarios(int id)
+        // DELETE: api/Autores/5
+        [ResponseType(typeof(Autores))]
+        public IHttpActionResult DeleteAutores(int id)
         {
-            Usuarios usuarios = db.Usuarios.Find(id);
-            if (usuarios == null)
+            Autores autores = db.Autores.Find(id);
+
+            if (autores == null)
             {
                 return NotFound();
             }
 
-            usuarios.Ativo = false;
+            db.Autores.Find(id).Ativo = false;
 
             db.SaveChanges();
 
-            return Ok(usuarios);
+            return Ok(autores);
         }
 
         protected override void Dispose(bool disposing)
@@ -115,9 +115,9 @@ namespace WEBAPIRESTFULL.Controllers
             base.Dispose(disposing);
         }
 
-        private bool UsuariosExists(int id)
+        private bool AutoresExists(int id)
         {
-            return db.Usuarios.Count(e => e.Id == id) > 0;
+            return db.Autores.Count(e => e.Id == id) > 0;
         }
     }
 }

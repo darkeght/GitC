@@ -7,7 +7,7 @@ namespace WEBAPIRESTFULL.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Usuarios
+    public partial class Usuarios : UserControls
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Usuarios()
@@ -36,16 +36,6 @@ namespace WEBAPIRESTFULL.Models
         [Required]
         [StringLength(100)]
         public string Email { get; set; }
-
-        public bool Ativo { get; set; }
-
-        public int UsuInc { get; set; } = 0;
-
-        public int UsuAlt { get; set; } = 0;
-
-        public DateTime DatInc { get; set; } = DateTime.Now;
-
-        public DateTime DatAlt { get; set; } = DateTime.Now;
 
         [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
