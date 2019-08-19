@@ -406,25 +406,26 @@
           <li class="active">Usuários</li>
         </ol>
       </section>
-	  
+
       <section class="content" style="margin-bottom:0px;padding-bottom:0px;min-height:0px;">
         <!-- Small boxes (Stat box) -->
-        <form  name="formusuarios" id="formusuarios"  class="box box-primary  collapsed-box" >
+        <form call="GetMethod" send-post="Usuarios" class="box box-primary collapsed-box form-post">
           <div class="box-header with-border">
             <h3 class="box-title">Usuários</h3>
-			
-			<div class="box-tools pull-right">
-				<button type="button" class="btn btn-block btn-primary" data-widget="collapse"><i class="fa fa-plus"></i></button>
-			</div>
+
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-block btn-primary" data-widget="collapse"><i
+                  class="fa fa-plus"></i></button>
+            </div>
           </div>
           <!-- hidden field -->
-		  <input type="hidden" class="form-control" id="Id" name="Id" />
+          <input type="hidden" class="form-control" id="Id" name="Id" />
           <!-- form start -->
           <div class="box-body">
             <div class="col-md-6">
               <div class="form-group">
                 <label for="Nome">Nome</label>
-                <input type="text" class="form-control" id="Nome" name="Nome" placeholder="Seu nome completo"/>
+                <input type="text" class="form-control" id="Nome" name="Nome" placeholder="Seu nome completo" />
               </div>
               <div class="form-group">
                 <label>Ativo</label>
@@ -437,13 +438,13 @@
 
             </div>
             <div class="col-md-6">
-			  <div class="form-group">
+              <div class="form-group">
                 <label for="Login">Login</label>
-                <input type="Text" class="form-control" name="Login" id="Login" placeholder="Login"/>
+                <input type="Text" class="form-control" name="Login" id="Login" placeholder="Login" />
               </div>
               <div class="form-group">
                 <label for="Senha">Senha</label>
-                <input type="password" class="form-control" name="Senha" id="Senha" placeholder="Senha"/>
+                <input type="password" class="form-control" name="Senha" id="Senha" placeholder="Senha" />
               </div>
               <div class="form-group">
                 <label>E-mail:</label>
@@ -451,7 +452,8 @@
                   <div class="input-group-addon">
                     <i class="fa fa-at"></i>
                   </div>
-                  <input type="text" name="Email" id="Email" class="form-control" data-inputmask='"mask": ""' data-mask />
+                  <input type="text" name="Email" id="Email" class="form-control" data-inputmask='"mask": ""'
+                    data-mask />
                 </div>
                 <!-- /.input group -->
               </div>
@@ -459,48 +461,50 @@
             <!-- /.box-body -->
             <div class="box-footer">
               <button type="submit" id="bntSubmit" class="btn btn-primary">Finalizar cadastro</button>
-			  <button type="button" id="bntSalvar" class="btn btn-primary"   style="display:none;">Salvar cadastro</button>
-			  <button type="button" id="bntCancelar" class="btn btn-primary" style="display:none;">Cancelar cadastro</button>
+              <button type="button" id="bntSalvar" class="btn btn-primary" style="display:none;">Salvar
+                cadastro</button>
+              <button type="button" id="bntCancelar" class="btn btn-primary" style="display:none;">Cancelar
+                cadastro</button>
             </div>
           </div>
         </form>
 
       </section>
 
-	  
-	<section class="content">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Usuários</h3>
 
-              <div class="box-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
-                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Buscar">
+      <section class="content">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="box">
+              <div class="box-header">
+                <h3 class="box-title">Usuários</h3>
 
-                  <div class="input-group-btn">
-                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                <div class="box-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control pull-right" placeholder="Buscar">
+
+                    <div class="input-group-btn">
+                      <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div  class="easyui-datagrid box-body table-responsive no-padding">
-              <table id="tDataGrid" class="table table-hover">
-                <tr>
-                  <th data-options="field:'Id',width:100">ID</th>
-                  <th>Nome</th>
-				  <th>Login</th>
-                  <th>E-mail</th>
-				  <th>login</th>
-                  <th>Opções</th>
-                </tr>
-              </table>
+              <div class="easyui-datagrid box-body table-responsive no-padding">
+                <table id="tDataGrid" class="table table-hover">
+                  <tr>
+                    <th data-options="field:'Id',width:100">ID</th>
+                    <th>Nome</th>
+                    <th>Login</th>
+                    <th>E-mail</th>
+                    <th>login</th>
+                    <th>Opções</th>
+                  </tr>
+                </table>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
@@ -701,40 +705,41 @@
   </div>
   <!-- ./wrapper -->
   <scriptsection>
-	  <!-- jQuery 3 -->
-	  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-	  <!-- jQuery UI 1.11.4 -->
-	  <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
-	  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-	  <script>$.widget.bridge('uibutton', $.ui.button);</script>
-	  <!-- Bootstrap 3.3.7 -->
-	  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	  <!-- Sparkline -->
-	  <script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-	  <!-- jvectormap -->
-	  <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-	  <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-	  <!-- jQuery Knob Chart -->
-	  <script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
-	  <!-- daterangepicker -->
-	  <script src="bower_components/moment/min/moment.min.js"></script>
-	  <script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-	  <!-- datepicker -->
-	  <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-	  <!-- Bootstrap WYSIHTML5 -->
-	  <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-	  <!-- Slimscroll -->
-	  <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	  <!-- FastClick -->
-	  <script src="bower_components/fastclick/lib/fastclick.js"></script>
-	  <!-- AdminLTE App -->
-	  <script src="dist/js/adminlte.min.js"></script>
-	  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-	  <script src="dist/js/pages/dashboard.js"></script>
-	  <!-- AdminLTE for demo purposes -->
-	  <script src="dist/js/demo.js"></script>
-	  <!-- Custom page script sections -->
-	  <script src="js/usuarios.js"></script>
+    <!-- jQuery 3 -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>$.widget.bridge('uibutton', $.ui.button);</script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Sparkline -->
+    <script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <!-- jvectormap -->
+    <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- datepicker -->
+    <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <!-- Slimscroll -->
+    <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+    <!-- Custom page script sections -->
+    <script src="js/usuarios.js"></script>
+    <script src="js/utils.js"></script>
   </scriptsection>
 </body>
 

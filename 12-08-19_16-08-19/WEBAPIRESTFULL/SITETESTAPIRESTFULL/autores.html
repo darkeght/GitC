@@ -346,7 +346,6 @@
             <a href="#">Administrador</a>
           </div>
         </div>
-        <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
           <li class="treeview">
@@ -408,8 +407,8 @@
       </section>
 	  
       <section class="content" style="margin-bottom:0px;padding-bottom:0px;min-height:0px;">
-        <!-- Small boxes (Stat box) -->
-        <form  name="formusuarios" id="formusuarios"  class="box box-primary  collapsed-box" >
+
+        <form call="GetMethod" send-post="Autores"  class="box box-primary collapsed-box form-post" >
           <div class="box-header with-border">
             <h3 class="box-title">Autores</h3>
 			
@@ -708,8 +707,9 @@
 	  <script src="dist/js/pages/dashboard.js"></script>
 	  <!-- AdminLTE for demo purposes -->
 	  <script src="dist/js/demo.js"></script>
-	  <!-- Custom page script sections -->
-	  <script src="js/autores.js"></script>
+    <!-- Custom page script sections -->
+    <script src="js/autores.js"></script>
+	  <script src="js/utils.js"></script>
   </scriptsection>
 </body>
 
