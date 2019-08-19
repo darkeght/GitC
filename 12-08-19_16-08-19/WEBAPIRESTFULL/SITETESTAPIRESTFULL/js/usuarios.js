@@ -2,24 +2,7 @@
     /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
   	jQuery(document).ready(function(){
 
-		jQuery('#bntSalvar').click(function(){
-			 Editing();
-			 
-			$('#bntSubmit').show();
-			$('#bntSalvar').hide();
-			$('#bntCancelar').hide();
-			
-			$('#Id').val("");
-			$('#Nome').val("");
-			$('#Login').val("");
-			$('#Email').val("");
-			$('#Senha').val("");
-			$('#Ativo select').val("true");
-		});
-		
 		jQuery('#bntCancelar').click(function(){
-			$('#bntSubmit').show();
-			$('#bntSalvar').hide();
 			$('#bntCancelar').hide();
 			
 			$('#Id').val("");
@@ -34,8 +17,8 @@
 	});
 	
 	function GetByID(id){
-        $('#bntSubmit').hide();
-		$('#bntSalvar').show();
+        //$('#bntSubmit').hide();
+		//$('#bntSalvar').show();
 		$('#bntCancelar').show();
 		
         var settings = {
@@ -58,26 +41,6 @@
 				$('#Ativo select').val(response.Ativo);
 			});
 		
-	}
-	
-	function Editing(){
-		var dados = $('#formusuarios').serialize();
-		var id = $('#Id').val();
-
-		 var settings = {
-		  "crossDomain": true,
-		  "url": "http://localhost:59271/Api/Usuarios/"+id,
-		  "method": "PUT",
-		  "headers": {
-			"Content-Type": "application/x-www-form-urlencoded",
-			"Accept": "*/*"
-		  },
-		  "data": dados
-		}
-
-		$.ajax(settings).done(function (response) {
-		    GetMethod(null);
-		});
 	}
 
 	function Potator(object){
