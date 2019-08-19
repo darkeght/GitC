@@ -1,5 +1,6 @@
 
-    /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
+	
+	/* Ao carregar o documento o mesmo inicia o conteudo desde script*/
   	jQuery(document).ready(function(){
 
 		jQuery('#bntCancelar').click(function(){
@@ -12,7 +13,7 @@
 			$('#Senha').val("");
 			$('#Ativo select').val("true");
 		});
-		
+
 		GetMethod(null);
 	});
 	
@@ -45,22 +46,6 @@
 
 	function Potator(object){
 		alert('Teste potator pulgmatica');
-	}
-	
-	function Deleting(id){
-			 var settings = {
-			  "crossDomain": true,
-			  "url": "http://localhost:59271/Api/Usuarios/"+id,
-			  "method": "DELETE",
-			  "headers": {
-				"Content-Type": "application/x-www-form-urlencoded",
-				"Accept": "*/*"
-			  }
-			}
-
-			$.ajax(settings).done(function (response) {
-			    GetMethod(null);
-			});
 	}
     
     function GetMethod(object){
@@ -105,7 +90,7 @@
 						+ '<td>' 
 						+ 	'<div    class=\'col-md-12\' style=\'float: right;\'>'
 						+ 		'<div    class=\'col-md-6\'>'
-						+ 			'<button class=\'btn btn-block btn-danger col-md-3 ajax\' type=\'button\'  onclick=\'Deleting('+ value.Id +')\'>Remover</button>'
+						+ 			'<button class=\'btn btn-block btn-danger col-md-3 btn-delet-event\' type=\'button\' send-post=\'Usuarios\'  value=\''+ value.Id +'\'>Remover</button>'
 						+ 		'</div>'
 						+ 		'<div     class=\'col-md-6\'>'
 						+ 			'<button  class=\'btn btn-block btn-success col-md-3\'    type=\'button\'  onclick=\'GetByID('+ value.Id +')\'\>Editar</button>'
@@ -115,6 +100,8 @@
 					+ '</tr>';
         $('#tDataGrid').append(row);
 		});
+
+		SetGridClickEvents();
     }
 	
 	
