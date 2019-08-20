@@ -64,6 +64,9 @@ function SetGridClickEvents(){
     });
 
     $('.btn-editing-event').click(function(){
+         if($('#collapse-btn')[0].innerHTML.indexOf('fa-plus') > -1)
+                $('#collapse-btn').click();
+         
          var id = $(this).attr('value');
          var sendpost = $(this).attr('send-post');
 
@@ -79,9 +82,10 @@ function SetGridClickEvents(){
 
       $.ajax(settings).done(function (response) {
           $.each(response,function(index,value){
-              /* teste Property and value*/
               $('input[name="'+ index +'"]').val(value);
           });
+
+          $('#btnCancelar').show();
       });
 
     });

@@ -350,44 +350,17 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
           <li class="treeview">
-            <a href="usuarios.html">
-              <i class="fa   fa-cog"></i> <span>Usuários</span>
+            <a>
+              <i class="fa   fa-cog"></i> <span>Administração</span>
             </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
+            <ul class="treeview-menu">
+              <li><a href="usuarios.html"><i class="fa fa-circle-o"></i> Usuários</a></li>
+              <li><a href="autores.html"> <i class="fa fa-circle-o"></i> Autores</a></li>
+              <li><a href="livros.html">  <i class="fa fa-circle-o"></i> Livros</a></li>
+              <li><a href="generos.html"> <i class="fa fa-circle-o"></i> Gêneros</a></li>
+              <li><a href="editoras.html"><i class="fa fa-circle-o"></i> Editoras</a></li>
+              <li><a href="locacoes.html"><i class="fa fa-circle-o"></i> Locações</a></li>
+            </ul>
           </li>
         </ul>
       </section>
@@ -414,8 +387,9 @@
             <h3 class="box-title">Usuários</h3>
 
             <div class="box-tools pull-right">
-              <button type="button" class="btn btn-block btn-primary" data-widget="collapse"><i
-                  class="fa fa-plus"></i></button>
+              <button id="collapse-btn" type="button" class="btn btn-block btn-primary" data-widget="collapse"><i
+                  class="fa fa-plus"></i>
+              </button>
             </div>
           </div>
           <!-- hidden field -->
@@ -461,9 +435,7 @@
             <!-- /.box-body -->
             <div class="box-footer">
               <button type="submit" id="bntSubmit" class="btn btn-primary">Finalizar cadastro</button>
-              <button type="button" id="bntSalvar" class="btn btn-primary" style="display:none;">Salvar
-                cadastro</button>
-              <button type="button" id="bntCancelar" class="btn btn-primary" style="display:none;">Cancelar
+              <button type="button" id="btnCancelar" class="btn btn-primary">Cancelar
                 cadastro</button>
             </div>
           </div>
