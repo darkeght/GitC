@@ -4,6 +4,7 @@ namespace WEBAPIRESTFULL.Models
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using WEBAPIRESTFULL.Utils;
 
     public partial class BibliotecaContextDB : DbContext
     {

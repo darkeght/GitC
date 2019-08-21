@@ -357,7 +357,7 @@
               <li><a href="usuarios.html"><i class="fa fa-circle-o"></i> Usuários</a></li>
               <li><a href="autores.html"> <i class="fa fa-circle-o"></i> Autores</a></li>
               <li><a href="livros.html">  <i class="fa fa-circle-o"></i> Livros</a></li>
-              <li><a href="generos.html"> <i class="fa fa-circle-o"></i> Gêneros</a></li>
+              <li><a href="generos.html"> <i class="fa fa-circle-o"></i> Editoras</a></li>
               <li><a href="editoras.html"><i class="fa fa-circle-o"></i> Editoras</a></li>
               <li><a href="locacoes.html"><i class="fa fa-circle-o"></i> Locações</a></li>
             </ul>
@@ -376,15 +376,15 @@
         </h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-          <li class="active">Usuários</li>
+          <li class="active">Editoras</li>
         </ol>
       </section>
 
       <section class="content" style="margin-bottom:0px;padding-bottom:0px;min-height:0px;">
         <!-- Small boxes (Stat box) -->
-        <form call="GetMethod" send-post="Usuarios" class="box box-primary collapsed-box form-post">
+        <form call="GetMethod" send-post="Editoras" class="box box-primary collapsed-box form-post">
           <div class="box-header with-border">
-            <h3 class="box-title">Usuários</h3>
+            <h3 class="box-title">Editoras</h3>
 
             <div class="box-tools pull-right">
               <button id="collapse-btn" type="button" class="btn btn-block btn-primary" data-widget="collapse"><i
@@ -399,37 +399,15 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="Nome">Nome</label>
-                <input type="text" class="form-control" id="Nome" name="Nome" placeholder="Seu nome completo" />
-              </div>
-              <div class="form-group">
-                <label>Ativo</label>
-                <select name="Ativo" id="Ativo" class="form-control select2" style="width: 100%;">
-                  <option value="true" selected="selected">Ativo</option>
-                  <option value="false">Inativo</option>
-                </select>
+                <input type="text" class="form-control" id="Nome" name="Nome" placeholder="Nome da Editora." />
               </div>
 
 
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label for="Login">Login</label>
-                <input type="Text" class="form-control" name="Login" id="Login" placeholder="Login" />
-              </div>
-              <div class="form-group">
-                <label for="Senha">Senha</label>
-                <input type="password" class="form-control" name="Senha" id="Senha" placeholder="Senha" />
-              </div>
-              <div class="form-group">
-                <label>E-mail:</label>
-                <div class="input-group">
-                  <div class="input-group-addon">
-                    <i class="fa fa-at"></i>
-                  </div>
-                  <input type="text" name="Email" id="Email" class="form-control" data-inputmask='"mask": ""'
-                    data-mask />
-                </div>
-                <!-- /.input group -->
+                <label for="Login">Descrição</label>
+                <input type="Text" class="form-control" name="Descricao" id="Descricao" placeholder="Descrição da editora." />
               </div>
             </div>
             <!-- /.box-body -->
@@ -448,7 +426,7 @@
           <div class="col-xs-12">
             <div class="box">
               <div class="box-header">
-                <h3 class="box-title">Usuários</h3>
+                <h3 class="box-title">Editoras</h3>
 
                 <div class="box-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -465,9 +443,7 @@
                   <tr>
                     <th data-options="field:'Id',width:100">ID</th>
                     <th>Nome</th>
-                    <th>Login</th>
-                    <th>E-mail</th>
-                    <th>login</th>
+                    <th>Descrição</th>
                     <th>Opções</th>
                   </tr>
                 </table>
@@ -710,7 +686,7 @@
     <script src="dist/js/demo.js"></script>
     <!-- Custom page script sections -->
     <script src="js/utils.js"></script>
-    <script src="js/usuarios.js"></script>
+    <script src="js/editoras.js"></script>
 
   </scriptsection>
 </body>

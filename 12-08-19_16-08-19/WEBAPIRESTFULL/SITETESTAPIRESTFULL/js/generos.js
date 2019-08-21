@@ -2,14 +2,6 @@
 	
 	/* Ao carregar o documento o mesmo inicia o conteudo desde script*/
     jQuery(document).ready(function(){
-
-		jQuery('#btnCancelar').click(function(){
-
-			$('#Id').val("");
-			$('#Tipo').val("");
-			$('#Descricao').val("");
-		});
-
 		GetMethod(null);
 	});
     
