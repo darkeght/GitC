@@ -94,6 +94,7 @@ function SetGridClickEvents(){
       $.ajax(settings).done(function (response) {
           $.each(response,function(index,value){
               $('input[name="'+ index +'"]').val(value);
+              $('select[name="'+ index +'"]').val(value);
           });
 
           $('#btnCancelar').show();

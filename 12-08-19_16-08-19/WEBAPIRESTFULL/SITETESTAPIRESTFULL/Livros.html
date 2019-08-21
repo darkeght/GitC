@@ -382,7 +382,7 @@
 
       <section class="content" style="margin-bottom:0px;padding-bottom:0px;min-height:0px;">
         <!-- Small boxes (Stat box) -->
-        <form call="GetMethod" send-post="Editoras" class="box box-primary collapsed-box form-post">
+        <form call="GetMethod" send-post="Livros" class="box box-primary collapsed-box form-post">
           <div class="box-header with-border">
             <h3 class="box-title">Livros</h3>
 
@@ -405,7 +405,15 @@
                 <label for="Isbn">ISBN</label>
                 <input type="Text" class="form-control" name="Isbn" id="Isbn" placeholder="Número do Isbn." />
               </div>
-
+              <div class="form-group">
+                <label for="Editora">Editora</label>
+                <select Id="Editora" name="Editora" class="form-control select2" style="width: 100%;" >
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="Observacoes">Observações</label>
+                <input type="text" class="form-control" id="Observacoes" name="Observacoes" placeholder="Observações" />
+              </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
@@ -415,12 +423,15 @@
               <div class="form-group">
                 <label for="Genero">Gênero</label>
                 <select Id="Genero" name="Genero" class="form-control select2" style="width: 100%;" >
-                    
                 </select>
+              </div>
+              <div class="form-group">
+                <label for="Sinopse">Sinopse</label>
+                <input type="text" class="form-control" id="Sinopse" name="Sinopse" placeholder="Sinopse" />
               </div>
             </div>
             <!-- /.box-body -->
-            <div class="box-footer">
+            <div class="box-footer col-md-12">
               <button type="submit" id="bntSubmit" class="btn btn-primary">Finalizar</button>
               <button type="button" class="btn btn-primary btn-cancel-form">Cancelar</button>
             </div>
@@ -435,7 +446,7 @@
           <div class="col-xs-12">
             <div class="box">
               <div class="box-header">
-                <h3 class="box-title">Editoras</h3>
+                <h3 class="box-title">Livros</h3>
 
                 <div class="box-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -451,7 +462,7 @@
                 <table id="tDataGrid" class="table table-hover">
                   <tr>
                     <th data-options="field:'Id',width:100">ID</th>
-                    <th>Nome</th>
+                    <th>Titulo</th>
                     <th>Descrição</th>
                     <th>Opções</th>
                   </tr>
