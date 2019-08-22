@@ -3,7 +3,6 @@ var editorasList;
 
 jQuery(document).ready(function(){
     var settings = {
-        "async": true,
         "crossDomain": true,
         "url": "http://localhost:59271/Api/Generos",
         "method": "GET",
@@ -22,7 +21,6 @@ jQuery(document).ready(function(){
         });
 
         settings = {
-        "async": true,
         "crossDomain": true,
         "url": "http://localhost:59271/Api/Editoras",
         "method": "GET",
@@ -38,14 +36,13 @@ jQuery(document).ready(function(){
             $.each(response,function(index,value){
                 $('#Editora')[0].innerHTML += '<option value=\''+ value.Id +'\'>'+ value.Nome +'</option>';
             });
-        });
 
-        GetMethod(null);
+            GetMethod(null);
+        });
 });
 
 function GetMethod(object){
     var settings = {
-        "async": true,
         "crossDomain": true,
         "url": "http://localhost:59271/Api/Livros",
         "method": "GET",
