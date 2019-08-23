@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="baba3fa74fd34deb9a8e01a2869f67c6" Name="Diagram1">
+        <EntityTypeShape EntityType="SistemaBibliotecaDBModel.Autore" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaBibliotecaDBModel.Editora" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaBibliotecaDBModel.Genero" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaBibliotecaDBModel.Livro" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaBibliotecaDBModel.Locacao" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaBibliotecaDBModel.Usuario" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="SistemaBibliotecaDBModel.FK_Livros_To_Editoras" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaBibliotecaDBModel.FK_Livros_To_Generos" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaBibliotecaDBModel.FK_Livros_To_UsuariosAlt" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaBibliotecaDBModel.FK_Livros_To_UsuariosInc" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaBibliotecaDBModel.FK_Locacao_Livros" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaBibliotecaDBModel.FK_Locacao_UsuAlt" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaBibliotecaDBModel.FK_Locacao_UsuarioALoc" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaBibliotecaDBModel.FK_Locacao_UsuInc" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaBibliotecaDBModel.LivroAutor" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

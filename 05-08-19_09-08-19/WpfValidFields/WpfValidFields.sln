@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfValidFields", "WpfValidFields\WpfValidFields.csproj", "{1FFE10D5-8202-47AF-9713-15AFADE8C258}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FFE10D5-8202-47AF-9713-15AFADE8C258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FFE10D5-8202-47AF-9713-15AFADE8C258}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FFE10D5-8202-47AF-9713-15AFADE8C258}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FFE10D5-8202-47AF-9713-15AFADE8C258}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6130C3DD-2D2B-40C3-A303-ABA7B8824AA6}
+	EndGlobalSection
+EndGlobal

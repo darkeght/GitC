@@ -1,0 +1,92 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Projeto web</title>
+    <style>
+        .customBntCss{
+                width: 262px;
+                margin: 7px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border: 0px;
+                font-family: monospace;
+                background: #4caf50;
+                color: #fff;
+                font-size: 22px;
+                cursor:pointer;
+        }
+        .customBntCss:hover{
+            background: #2ed835;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label>Pesquisa</label>
+        <label>Nome</label>
+        <input type="text" name="nome" id="nome" class="nometeste" placeholder="Informe o nome a ser pesquisado" />
+        <br />
+        <button id="bntPesquisar" name="bntPesquisar" class="customBntCss">
+            Pesquisar
+        </button>
+        <button id="bntPesquisar" name="bntPesquisar" class="customBntCss">
+            Magia 2
+        </button>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        var foo = { nome: 'Felipe', sobrenome: 'Machado', idade: 27 };
+
+        var bar = Object.create(foo);
+
+        bar.temskol = true;
+
+        bar.nome;
+
+        bar.sobrenome;
+
+        bar.idade;
+
+        var esoumavariavel = [
+            {
+                "Id": "1",
+                "Nome": "Felipe Junior Machado",
+                "Idade": "27"
+            },
+            {
+                "Id": "2",
+                "Nome": "Giomar Rusbe Junior",
+                "Idade": "87"
+            }];
+
+
+        //$.each(bar.data[0], function (key, value) { alert("key:" + key + " Value:" + value); });
+
+        function Pesquisar() {
+            $.each(bar.data,
+                function (index, object) {
+                    var contentVal = $('#nome').val();
+
+                    if (object.Nome.indexOf(contentVal) > -1) {
+                        alert('Encontrado');
+                    }
+                });
+        }
+
+        
+            $(document).ready(function () {
+                $('.customBntCss').click(function () {
+                    $.each(esoumavariavel,
+                    function (index, object) {
+                        var contentVal = $('#nome').val();
+
+                        if (object.Nome.indexOf(contentVal) > -1) {
+                            alert('Encontrado');
+                        }
+                    });
+                });
+            });
+
+    </script>
+</body>
+</html>
