@@ -23,6 +23,7 @@ namespace WEBAPIRESTFULL.Models
 
         [Required]
         [StringLength(100)]
+        [CustomNameValidator]
         public string Nome { get; set; }
 
         [Required]
@@ -31,10 +32,12 @@ namespace WEBAPIRESTFULL.Models
 
         [Required]
         [StringLength(50)]
+        [Range(8,16,ErrorMessage ="Senha deve conter mínimo de 8 caracteres e máximo de 16")]
         public string Senha { get; set; }
 
         [Required]
         [StringLength(100)]
+        [RegularExpression(pattern: @"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$", ErrorMessage ="E-mail inválido.")]
         public string Email { get; set; }
 
         [JsonIgnore]

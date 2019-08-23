@@ -10,8 +10,9 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using WEBAPIRESTFULL.Models;
 using System.Web.Http.Cors;
+using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
-    
 namespace WEBAPIRESTFULL.Controllers
 {
     [EnableCors(origins:"*",headers:"*",methods:"*")]
@@ -19,10 +20,13 @@ namespace WEBAPIRESTFULL.Controllers
     {
         private readonly BibliotecaContextDB db = new BibliotecaContextDB();
 
+
         // GET: api/Usuarios
-        public IQueryable<Usuarios> GetUsuarios()
+        public async Task<IQueryable<Usuarios>> GetUsuarios()
         {
-           return db.Usuarios.Where(x => x.Ativo == true);
+           var retorno = await Task.Run(() => db.Usuarios.Where(x => x.Ativo == true));
+
+            return retorno;
         }
 
         // GET: api/Usuarios/5
